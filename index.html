@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Técnico - Vanessa Rodrigues (PO/BA)</title>
+    <!-- Carregamento do Tailwind CSS e da fonte Inter -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Configuração de fonte padrão */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            color: #1A4C82; /* Cor base para textos escuros */
+        }
+
+        /* 0. NAVBAR FIXA: Estilo para a barra de navegação */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color: rgba(255, 255, 255, 0.95); /* Fundo semi-transparente */
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(5px);
+        }
+        .nav-link {
+            transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.2s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        .nav-link:hover {
+            color: #5BA8FF;
+            transform: translateY(-2px);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #5BA8FF;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        .nav-link.active {
+            color: #1A4C82;
+            font-weight: 600;
+        }
+
+        /* 1. TELA INICIAL: Efeito Glow Circular */
+        .title-glow {
+            position: relative;
+            z-index: 10;
+            display: inline-block;
+        }
+        .title-glow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px; /* Tamanho do brilho */
+            height: 300px;
+            background-color: #A9D4FF;
+            opacity: 0.3; /* Opacidade conforme solicitado */
+            border-radius: 50%;
+            filter: blur(80px); /* Suavidade do brilho */
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        
+        /* 2. SOBRE MIM: Borda do Card da Foto com Degradê e Glow Suave */
+        .photo-card-wrapper {
+            padding: 3px; /* Espaço para o degradê */
+            background: linear-gradient(45deg, #5BA8FF, #8C52FF, #FF7AD1);
+            border-radius: 24px;
+            box-shadow: 0 0 20px rgba(137, 71, 255, 0.2); /* Glow suave roxo/lilás */
+            transition: all 0.3s ease;
+        }
+
+        /* 3. HARD SKILLS: Degradê do Elemento na Timeline */
+        .hard-skill-timeline-item {
+            background: linear-gradient(135deg, #92C7FF, #D6BAFF);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 10;
+        }
+        .hard-skill-timeline-item:hover {
+            transform: scale(1.03); /* Expansão leve na barra */
+            box-shadow: 0 8px 25px rgba(146, 199, 255, 0.5); /* Destaque com brilho */
+        }
+        .hard-skill-dot {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #D6BAFF;
+            border: 3px solid white;
+            z-index: 20;
+        }
+        
+        /* 5. FORMAÇÃO: Degradê dos Círculos da Timeline */
+        .timeline-circle-gradient {
+            background: linear-gradient(45deg, #74B3FF, #C79CFF);
+        }
+
+        /* 7. TRAJETÓRIA: Barra Lateral de Degradê no Card */
+        .career-card-border {
+            border-left: 8px solid transparent;
+            border-image: linear-gradient(to bottom, #5BA8FF, #8C52FF, #FF7AD1) 1;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 6. MÉTODO DE TRABALHO: Cores das Setas (Usando cores Tailwind customizadas para os degradês) */
+        .flow-blue { background: linear-gradient(45deg, #5BA8FF, #78B9FF); }
+        .flow-purple { background: linear-gradient(45deg, #9B6BFF, #A985FF); }
+        .flow-pink { background: linear-gradient(45deg, #FF7AD1, #FF99E0); }
+        .flow-green { background: linear-gradient(45deg, #7ADFA8, #9BECC5); }
+        .flow-orange { background: linear-gradient(45deg, #FFC16E, #FFD9A0); }
+        .flow-teal { background: linear-gradient(45deg, #2C6E81, #4B8C9F); }
+
+        /* Estilo para os chevrons (setas) */
+        .flow-step-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .flow-step {
+            padding: 1.5rem 2rem;
+            clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%, 5% 50%);
+            margin-right: 1.5rem;
+            min-width: 200px;
+            transition: transform 0.3s ease;
+            animation: flow-swoop 8s infinite alternate; /* Animação flow sutil */
+        }
+        
+        .flow-step:last-child {
+            clip-path: none; /* Último elemento não tem o corte de seta */
+            margin-right: 0;
+            border-radius: 0.75rem;
+        }
+
+        @keyframes flow-swoop {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-3px); }
+        }
+
+    </style>
+</head>
+<body class="min-h-screen bg-white">
+
+    <!-- 0. NAVBAR FIXA (Menu de Navegação) -->
+    <nav class="navbar hidden md:block">
+        <div class="container mx-auto max-w-6xl px-4 py-4 flex justify-center space-x-8">
+            <a href="#home" class="nav-link text-sm uppercase font-medium">Início</a>
+            <a href="#sobre" class="nav-link text-sm uppercase font-medium">Sobre Mim</a>
+            <a href="#hard-skills" class="nav-link text-sm uppercase font-medium">Hard Skills</a>
+            <a href="#soft-skills" class="nav-link text-sm uppercase font-medium">Soft Skills</a>
+            <a href="#metodo" class="nav-link text-sm uppercase font-medium">Método de Trabalho</a>
+            <a href="#formacao" class="nav-link text-sm uppercase font-medium">Formação</a>
+            <a href="#trajetoria" class="nav-link text-sm uppercase font-medium">Trajetória</a>
+            <a href="#contato" class="nav-link text-sm uppercase font-medium">Contato</a>
+        </div>
+    </nav>
+    
+    <!-- 1. TELA INICIAL (Home) -->
+    <!-- Adicionado pt-40 para compensar o tamanho da navbar fixa -->
+    <section id="home" class="relative pt-40 pb-32 min-h-screen flex flex-col justify-center items-center text-center 
+                               bg-gradient-to-br from-[#E8F1FF] to-white overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 z-20">
+            <div class="title-glow mb-12">
+                <h1 class="text-[#0B325F] font-extrabold leading-tight" 
+                    style="font-size: clamp(60px, 8vw, 72px);">
+                    Vanessa Rodrigues de Oliveira
+                </h1>
+                <h2 class="text-[#1A4C82] font-medium mt-3" 
+                    style="font-size: clamp(26px, 4vw, 32px);">
+                    Product Owner • Business Analyst • QA • +10 anos em Tecnologia e Transformação Digital
+                </h2>
+            </div>
+
+            <!-- Mini-informações de contato -->
+            <p class="text-sm text-gray-600 space-x-4 mb-16">
+                <span><i data-lucide="map-pin" class="inline-block w-4 h-4 mr-1"></i> Rio de Janeiro, RJ – Brasil</span>
+                <span class="hidden sm:inline-block">|</span>
+                <span><i data-lucide="phone" class="inline-block w-4 h-4 mr-1"></i> +55 21 99245-3344</span>
+                <span class="hidden sm:inline-block">|</span>
+                <span><i data-lucide="mail" class="inline-block w-4 h-4 mr-1"></i> vanessaoliveiravro@gmail.com</span>
+                <span class="hidden sm:inline-block">|</span>
+                <a href="#" target="_blank" class="hover:text-[#5BA8FF] transition duration-300">
+                    <i data-lucide="linkedin" class="inline-block w-4 h-4 mr-1"></i> LinkedIn
+                </a>
+            </p>
+
+            <!-- Elemento visual: Infográfico PO Circular -->
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12 mt-16">
+                
+                <!-- Helper function to generate the PO circle -->
+                <div class="po-circle-wrapper flex flex-col items-center">
+                    <div class="w-32 h-32 flex flex-col justify-center items-center text-white p-4 rounded-full shadow-lg transition duration-300 hover:scale-105 hover:shadow-2xl"
+                         style="background: linear-gradient(135deg, #C3E1FF, #E6D8FF); color: #0B325F;">
+                        <i data-lucide="eye" class="w-8 h-8 mb-1"></i>
+                        <span class="font-semibold text-lg">Visão</span>
+                    </div>
+                    <div class="w-0.5 h-6 bg-gray-300 my-2 md:hidden"></div>
+                </div>
+
+                <i data-lucide="arrow-right-circle" class="w-6 h-6 text-gray-400 hidden md:block"></i>
+                
+                <div class="po-circle-wrapper flex flex-col items-center">
+                    <div class="w-32 h-32 flex flex-col justify-center items-center text-white p-4 rounded-full shadow-lg transition duration-300 hover:scale-105 hover:shadow-2xl"
+                         style="background: linear-gradient(135deg, #A9D4FF, #D6BAFF); color: #0B325F;">
+                        <i data-lucide="trending-up" class="w-8 h-8 mb-1"></i>
+                        <span class="font-semibold text-lg">Estratégia</span>
+                    </div>
+                    <div class="w-0.5 h-6 bg-gray-300 my-2 md:hidden"></div>
+                </div>
+
+                <i data-lucide="arrow-right-circle" class="w-6 h-6 text-gray-400 hidden md:block"></i>
+
+                <div class="po-circle-wrapper flex flex-col items-center">
+                    <div class="w-32 h-32 flex flex-col justify-center items-center text-white p-4 rounded-full shadow-lg transition duration-300 hover:scale-105 hover:shadow-2xl"
+                         style="background: linear-gradient(135deg, #8C52FF, #FF7AD1); color: #FFFFFF;">
+                        <i data-lucide="rocket" class="w-8 h-8 mb-1"></i>
+                        <span class="font-semibold text-lg">Entrega de Valor</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. SOBRE MIM (Sessão Sobre/Apresentação) -->
+    <section id="sobre" class="bg-white py-24">
+        <div class="container mx-auto max-w-6xl px-4">
+            <h3 class="text-4xl font-bold text-[#0B325F] mb-12 border-b-2 border-[#E8F1FF] pb-4">⭐ Sobre Mim</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center shadow-xl p-8 rounded-3xl bg-gray-50/50">
+                
+                <!-- Coluna 1: Foto e Contato -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="photo-card-wrapper mb-8">
+                        <img src="image_9024d7.jpg" 
+                             alt="Foto de Perfil de Vanessa Rodrigues" 
+                             class="rounded-2xl w-full max-w-xs h-auto bg-white" />
+                    </div>
+                    
+                    <a href="#" class="inline-flex items-center justify-center px-8 py-3 font-semibold rounded-full text-white transition duration-300 
+                                       bg-gradient-to-r from-[#5BA8FF] to-[#8C52FF] hover:scale-[1.03] hover:shadow-lg hover:shadow-purple-200"
+                       style="box-shadow: 0 4px 15px rgba(140, 82, 255, 0.4);">
+                        <i data-lucide="download" class="w-5 h-5 mr-2"></i>
+                        Baixar CV
+                    </a>
+                </div>
+                
+                <!-- Coluna 2: Síntese das Qualificações -->
+                <div>
+                    <h4 class="text-3xl font-bold text-[#1A4C82] mb-6">Síntese das Qualificações</h4>
+                    <p class="mb-6 text-gray-700 leading-relaxed">
+                        Profissional com mais de 10 anos de experiência em desenvolvimento de software, atuando em transição para Gestão Estratégica de Produtos Digitais. Certificada **CSPO®**, pós-graduada em Gerenciamento Ágil e especializada em Business Analysis, Scrum, OKRs e Inteligência Artificial aplicada a negócios.
+                    </p>
+                    
+                    <h4 class="text-2xl font-semibold text-[#1A4C82] mb-4">Foco de Atuação:</h4>
+                    <ul class="space-y-3 text-gray-700 list-none pl-0">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-[#5BA8FF] flex-shrink-0"></i>
+                            Levantamento e especificação de requisitos
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-[#5BA8FF] flex-shrink-0"></i>
+                            Gestão de backlog e escrita de User Stories
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-[#5BA8FF] flex-shrink-0"></i>
+                            Qualidade, testes e validação
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-[#5BA8FF] flex-shrink-0"></i>
+                            Alinhamento com stakeholders e visão de produto
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. HARD SKILLS (Infográfico Horizontal - Corrigido) -->
+    <section id="hard-skills" class="bg-white py-24">
+        <div class="container mx-auto max-w-6xl px-4">
+            <h3 class="text-4xl font-bold text-[#0B325F] mb-16 text-center border-b-2 border-[#E8F1FF] pb-4">⭐ Hard Skills</h3>
+
+            <!-- Layout Responsivo para a Timeline Horizontal (Scroll Horizontal em Telas Pequenas) -->
+            <div class="overflow-x-auto pb-6">
+                <div class="relative flex items-center justify-between min-w-[1400px] px-8 pt-8">
+                    <!-- Linha de Conexão Central -->
+                    <div class="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 transform -translate-y-1/2"></div>
+                    
+                    <div class="flex space-x-8">
+                        <!-- Skill Item 1 -->
+                        <div class="w-56 flex flex-col items-center text-center">
+                            <div class="hard-skill-timeline-item text-white p-4 rounded-xl shadow-md min-h-32 flex flex-col items-center justify-center">
+                                <i data-lucide="award" class="w-8 h-8 mb-2 text-white"></i>
+                                <p class="font-semibold text-sm">Product Ownership (CSPO®)</p>
+                                <div class="hard-skill-dot"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Item 2 -->
+                        <div class="w-56 flex flex-col items-center text-center">
+                            <div class="hard-skill-timeline-item text-white p-4 rounded-xl shadow-md min-h-32 flex flex-col items-center justify-center">
+                                <i data-lucide="search" class="w-8 h-8 mb-2 text-white"></i>
+                                <p class="font-semibold text-sm">Business Analysis (Discovery, requisitos, especificações)</p>
+                                <div class="hard-skill-dot"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Item 3 -->
+                        <div class="w-56 flex flex-col items-center text-center">
+                            <div class="hard-skill-timeline-item text-white p-4 rounded-xl shadow-md min-h-32 flex flex-col items-center justify-center">
+                                <i data-lucide="file-text" class="w-8 h-8 mb-2 text-white"></i>
+                                <p class="font-semibold text-sm">User Stories, BDD, TDD</p>
+                                <div class="hard-skill-dot"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Item 4 -->
+                        <div class="w-56 flex flex-col items-center text-center">
+                            <div class="hard-skill-timeline-item text-white p-4 rounded-xl shadow-md min-h-32 flex flex-col items-center justify-center">
+                                <i data-lucide="list-checks" class="w-8 h-8 mb-2 text-white"></i>
+                                <p class="font-semibold text-sm">Gestão de Backlog & Roadmap</p>
+                                <div class="hard-skill-dot"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Item 5 -->
+                        <div class="w-56 flex flex-col items-center text-center">
+                            <div class="hard-skill-timeline-item text-white p-4 rounded-xl shadow-md min-h-32 flex flex-col items-center justify-center">
+                                <i data-lucide="smartphone" class="w-8 h-8 mb-2 text-white"></i>
+                                <p class="font-semibold text-sm">Testes Mobile, Funcionais, Regressão</p>
+                                <div class="hard-skill-dot"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Item 6 -->
+                        <div class="w-56 flex flex-col items-center text-center">
+                            <div class="hard-skill-timeline-item text-white p-4 rounded-xl shadow-md min-h-32 flex flex-col items-center justify-center">
+                                <i data-lucide="tool" class="w-8 h-8 mb-2 text-white"></i>
+                                <p class="font-semibold text-sm">Ferramentas: Jira, Confluence, Figma</p>
+                                <div class="hard-skill-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 4. SOFT SKILLS (Cartões Coloridos) -->
+    <section id="soft-skills" class="py-24" style="background-color: #F3F8FF;">
+        <div class="container mx-auto max-w-6xl px-4">
+            <h3 class="text-4xl font-bold text-[#0B325F] mb-16 text-center border-b-2 border-[#E8F1FF] pb-4">⭐ Soft Skills</h3>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Helper function to create soft skill card -->
+                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
+                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
+                    <i data-lucide="message-square" class="w-8 h-8 text-[#5BA8FF] mb-4"></i>
+                    <p class="font-semibold text-gray-800">Comunicação com Stakeholders</p>
+                </div>
+                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
+                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
+                    <i data-lucide="layers" class="w-8 h-8 text-[#8C52FF] mb-4"></i>
+                    <p class="font-semibold text-gray-800">Visão Sistêmica</p>
+                </div>
+                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
+                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
+                    <i data-lucide="lightbulb" class="w-8 h-8 text-[#FF7AD1] mb-4"></i>
+                    <p class="font-semibold text-gray-800">Pensamento Analítico</p>
+                </div>
+                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
+                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
+                    <i data-lucide="users" class="w-8 h-8 text-[#5BA8FF] mb-4"></i>
+                    <p class="font-semibold text-gray-800">Liderança Colaborativa</p>
+                </div>
+                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
+                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
+                    <i data-lucide="zap" class="w-8 h-8 text-[#8C52FF] mb-4"></i>
+                    <p class="font-semibold text-gray-800">Priorização Estratégica</p>
+                </div>
+                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
+                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
+                    <i data-lucide="shuffle" class="w-8 h-8 text-[#FF7AD1] mb-4"></i>
+                    <p class="font-semibold text-gray-800">Adaptabilidade</p>
+                </div>
+                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
+                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
+                    <i data-lucide="target" class="w-8 h-8 text-[#5BA8FF] mb-4"></i>
+                    <p class="font-semibold text-gray-800">Foco em Resultado</p>
+                </div>
+                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
+                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
+                    <i data-lucide="handshake" class="w-8 h-8 text-[#8C52FF] mb-4"></i>
+                    <p class="font-semibold text-gray-800">Negociação</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. MÉTODO DE TRABALHO – “Fluxo PO” (Setas Coloridas) -->
+    <section id="metodo" class="bg-white py-24">
+        <div class="container mx-auto max-w-6xl px-4">
+            <h3 class="text-4xl font-bold text-[#0B325F] mb-16 text-center border-b-2 border-[#E8F1FF] pb-4">⭐ Método de Trabalho – "Fluxo PO"</h3>
+
+            <!-- Layout Responsivo para o Fluxo (Scroll Horizontal em Telas Pequenas) -->
+            <div class="overflow-x-auto pb-6">
+                <div class="flow-step-container flex items-center justify-start md:justify-center min-w-[1200px] md:min-w-full">
+
+                    <div class="flow-step flow-blue text-white rounded-xl shadow-xl">
+                        <i data-lucide="briefcase" class="w-6 h-6 mb-2"></i>
+                        <p class="font-bold text-sm">Discovery & Levantamento</p>
+                    </div>
+                    
+                    <div class="flow-step flow-purple text-white rounded-xl shadow-xl">
+                        <i data-lucide="map" class="w-6 h-6 mb-2"></i>
+                        <p class="font-bold text-sm">Mapeamento de Requisitos</p>
+                    </div>
+
+                    <div class="flow-step flow-pink text-white rounded-xl shadow-xl">
+                        <i data-lucide="sort-asc" class="w-6 h-6 mb-2"></i>
+                        <p class="font-bold text-sm">Priorização e Backlog Refinement</p>
+                    </div>
+                    
+                    <div class="flow-step flow-green text-white rounded-xl shadow-xl">
+                        <i data-lucide="clipboard-list" class="w-6 h-6 mb-2"></i>
+                        <p class="font-bold text-sm">User Stories & Critérios de Aceite</p>
+                    </div>
+                    
+                    <div class="flow-step flow-orange text-white rounded-xl shadow-xl">
+                        <i data-lucide="calendar-check" class="w-6 h-6 mb-2"></i>
+                        <p class="font-bold text-sm">Acompanhamento da Sprint</p>
+                    </div>
+
+                    <div class="flow-step flow-teal text-white rounded-xl shadow-xl">
+                        <i data-lucide="rocket" class="w-6 h-6 mb-2"></i>
+                        <p class="font-bold text-sm">Validação, UAT e Entrega de Valor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FORMAÇÃO & CERTIFICAÇÕES (Infográfico Horizontal) -->
+    <section id="formacao" class="bg-white py-24">
+        <div class="container mx-auto max-w-6xl px-4">
+            <h3 class="text-4xl font-bold text-[#0B325F] mb-16 text-center border-b-2 border-[#E8F1FF] pb-4">⭐ Formação & Certificações</h3>
+            
+            <div class="relative flex justify-between items-center pb-8 overflow-x-auto">
+                <!-- Linha de Conexão -->
+                <div class="absolute top-[20px] left-0 right-0 h-1 bg-gray-200 mx-10"></div>
+                
+                <!-- Timeline Items -->
+                <div class="flex space-x-12 min-w-max relative z-10 px-10">
+                    <!-- Helper component for Timeline Item -->
+                    <div class="w-48 flex flex-col items-center justify-start text-center">
+                        <div class="timeline-circle-gradient w-10 h-10 rounded-full flex items-center justify-center shadow-lg mb-4">
+                            <i data-lucide="graduation-cap" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-100 h-28 flex flex-col justify-center">
+                            <p class="font-semibold text-sm">Pós-Graduação – Gerenciamento Ágil (2024)</p>
+                        </div>
+                    </div>
+
+                    <div class="w-48 flex flex-col items-center justify-start text-center">
+                        <div class="timeline-circle-gradient w-10 h-10 rounded-full flex items-center justify-center shadow-lg mb-4">
+                            <i data-lucide="book-open" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-100 h-28 flex flex-col justify-center">
+                            <p class="font-semibold text-sm">Graduação – Banco de Dados (2022)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-48 flex flex-col items-center justify-start text-center">
+                        <div class="timeline-circle-gradient w-10 h-10 rounded-full flex items-center justify-center shadow-lg mb-4">
+                            <i data-lucide="certificate" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-100 h-28 flex flex-col justify-center">
+                            <p class="font-semibold text-sm">Certificação Scrum Product Owner® (CSPO)</p>
+                        </div>
+                    </div>
+
+                    <div class="w-48 flex flex-col items-center justify-start text-center">
+                        <div class="timeline-circle-gradient w-10 h-10 rounded-full flex items-center justify-center shadow-lg mb-4">
+                            <i data-lucide="briefcase" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-100 h-28 flex flex-col justify-center">
+                            <p class="font-semibold text-sm">EXIN/BCS Business Analysis (2025)</p>
+                        </div>
+                    </div>
+
+                    <div class="w-48 flex flex-col items-center justify-start text-center">
+                        <div class="timeline-circle-gradient w-10 h-10 rounded-full flex items-center justify-center shadow-lg mb-4">
+                            <i data-lucide="git-branch" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-100 h-28 flex flex-col justify-center">
+                            <p class="font-semibold text-sm">Roadmap e Priorização – PM3 (2025)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="w-48 flex flex-col items-center justify-start text-center">
+                        <div class="timeline-circle-gradient w-10 h-10 rounded-full flex items-center justify-center shadow-lg mb-4">
+                            <i data-lucide="target" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-100 h-28 flex flex-col justify-center">
+                            <p class="font-semibold text-sm">OKR Foundation – OKR Institute (2025)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. TRAJETÓRIA PROFISSIONAL (Timeline Vertical) -->
+    <section id="trajetoria" class="bg-gray-50 py-24">
+        <div class="container mx-auto max-w-4xl px-4">
+            <h3 class="text-4xl font-bold text-[#0B325F] mb-16 text-center border-b-2 border-[#E8F1FF] pb-4">⭐ Trajetória Profissional</h3>
+            
+            <div class="relative">
+                <!-- Linha Vertical da Timeline -->
+                <div class="hidden md:block absolute w-0.5 h-full bg-gray-200 left-1/2 transform -translate-x-1/2"></div>
+                
+                <!-- Helper component for Career Item -->
+                <!-- Parity check to alternate sides -->
+                <div class="space-y-12">
+                    
+                    <!-- Item 1: Foursys -->
+                    <div class="career-item flex flex-col md:flex-row items-center md:items-stretch w-full">
+                        <div class="md:w-1/2 md:pr-12 text-center md:text-right order-2 md:order-1">
+                            <div class="career-card-border p-6 rounded-xl shadow-lg bg-white relative transition duration-300 hover:shadow-xl">
+                                <h4 class="text-lg font-bold text-[#1A4C82] mb-1 flex items-center justify-center md:justify-end">
+                                    <i data-lucide="dices" class="w-5 h-5 mr-2 text-[#5BA8FF]"></i>
+                                    Foursys – Analista de Teste (2025)
+                                </h4>
+                                <ul class="text-sm text-gray-600 list-disc pl-5 mt-2 text-left md:text-right">
+                                    <li>Testes Mobile (Android/iOS)</li>
+                                    <li>Report de bugs</li>
+                                    <li>Participação em cerimônias (Scrum)</li>
+                                    <li>Uso de Jira, Confluence e Figma</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="md:w-0.5 md:h-0.5 w-4 h-4 rounded-full bg-[#5BA8FF] z-10 flex-shrink-0 mb-4 md:mb-0"></div>
+                        <div class="md:w-1/2 md:pl-12 order-1 md:order-2"></div>
+                    </div>
+                    
+                    <!-- Item 2: GFT -->
+                    <div class="career-item flex flex-col md:flex-row items-center md:items-stretch w-full">
+                        <div class="md:w-1/2 md:pr-12 order-2 md:order-2"></div>
+                        <div class="md:w-0.5 md:h-0.5 w-4 h-4 rounded-full bg-[#8C52FF] z-10 flex-shrink-0 mb-4 md:mb-0"></div>
+                        <div class="md:w-1/2 md:pl-12 text-center md:text-left order-1 md:order-3">
+                            <div class="career-card-border p-6 rounded-xl shadow-lg bg-white relative transition duration-300 hover:shadow-xl">
+                                <h4 class="text-lg font-bold text-[#1A4C82] mb-1 flex items-center justify-center md:justify-start">
+                                    <i data-lucide="target" class="w-5 h-5 mr-2 text-[#8C52FF]"></i>
+                                    GFT – Analista de Negócios (2024–2025)
+                                </h4>
+                                <ul class="text-sm text-gray-600 list-disc pl-5 mt-2 text-left">
+                                    <li>Discovery com stakeholders</li>
+                                    <li>Especificações funcionais</li>
+                                    <li>Gestão do backlog de Seguro Vida</li>
+                                    <li>Escrita e priorização de histórias</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3: SIS Consultoria -->
+                    <div class="career-item flex flex-col md:flex-row items-center md:items-stretch w-full">
+                        <div class="md:w-1/2 md:pr-12 text-center md:text-right order-2 md:order-1">
+                            <div class="career-card-border p-6 rounded-xl shadow-lg bg-white relative transition duration-300 hover:shadow-xl">
+                                <h4 class="text-lg font-bold text-[#1A4C82] mb-1 flex items-center justify-center md:justify-end">
+                                    <i data-lucide="bar-chart-3" class="w-5 h-5 mr-2 text-[#FF7AD1]"></i>
+                                    SIS Consultoria – Analista de Negócios (2021–2024)
+                                </h4>
+                                <ul class="text-sm text-gray-600 list-disc pl-5 mt-2 text-left md:text-right">
+                                    <li>Documentação de requisitos</li>
+                                    <li>Facilitação de dailies</li>
+                                    <li>Gestão de UAT</li>
+                                    <li>Apoio à PO e liderança de squad</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="md:w-0.5 md:h-0.5 w-4 h-4 rounded-full bg-[#FF7AD1] z-10 flex-shrink-0 mb-4 md:mb-0"></div>
+                        <div class="md:w-1/2 md:pl-12 order-1 md:order-2"></div>
+                    </div>
+
+                    <!-- Item 4: Wipro -->
+                    <div class="career-item flex flex-col md:flex-row items-center md:items-stretch w-full">
+                        <div class="md:w-1/2 md:pr-12 order-2 md:order-2"></div>
+                        <div class="md:w-0.5 md:h-0.5 w-4 h-4 rounded-full bg-[#5BA8FF] z-10 flex-shrink-0 mb-4 md:mb-0"></div>
+                        <div class="md:w-1/2 md:pl-12 text-center md:text-left order-1 md:order-3">
+                            <div class="career-card-border p-6 rounded-xl shadow-lg bg-white relative transition duration-300 hover:shadow-xl">
+                                <h4 class="text-lg font-bold text-[#1A4C82] mb-1 flex items-center justify-center md:justify-start">
+                                    <i data-lucide="shield-check" class="w-5 h-5 mr-2 text-[#5BA8FF]"></i>
+                                    Wipro – Analista de Testes Sr (2020–2021)
+                                </h4>
+                                <ul class="text-sm text-gray-600 list-disc pl-5 mt-2 text-left">
+                                    <li>Testes integrados, regressão e funcional</li>
+                                    <li>Report e homologação</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                     <button class="px-6 py-2 bg-gradient-to-r from-gray-200 to-gray-300 text-gray-800 rounded-full font-medium shadow-md transition duration-300 hover:from-[#8C52FF] hover:to-[#5BA8FF] hover:text-white">
+                        Ver mais detalhes
+                     </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CONTATO (Com Botões Degradê) -->
+    <section id="contato" class="py-24 text-center" 
+             style="background: linear-gradient(to bottom, #F0F7FF, #FFFFFF);">
+        <div class="container mx-auto max-w-4xl px-4">
+            <h3 class="text-4xl font-bold text-[#0B325F] mb-12 border-b-2 border-[#E8F1FF] pb-4">⭐ Entre em Contato</h3>
+            
+            <p class="text-xl text-gray-700 mb-10">
+                Vamos conversar sobre estratégia de produto e como posso agregar valor ao seu time.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-6">
+                
+                <a href="mailto:vanessaoliveiravro@gmail.com" class="inline-flex items-center px-8 py-3 font-semibold rounded-full text-white transition duration-300 
+                                       bg-gradient-to-r from-[#5BA8FF] to-[#8C52FF] hover:scale-105 hover:border hover:border-white hover:shadow-xl">
+                    <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
+                    E-mail
+                </a>
+
+                <a href="tel:+5521992453344" class="inline-flex items-center px-8 py-3 font-semibold rounded-full text-white transition duration-300 
+                                       bg-gradient-to-r from-[#5BA8FF] to-[#8C52FF] hover:scale-105 hover:border hover:border-white hover:shadow-xl">
+                    <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                    Telefone
+                </a>
+
+                <a href="#" target="_blank" class="inline-flex items-center px-8 py-3 font-semibold rounded-full text-white transition duration-300 
+                                       bg-gradient-to-r from-[#5BA8FF] to-[#8C52FF] hover:scale-105 hover:border hover:border-white hover:shadow-xl">
+                    <i data-lucide="linkedin" class="w-5 h-5 mr-2"></i>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer simples -->
+    <footer class="bg-[#0B325F] text-center text-white py-4 text-sm">
+        <p>Portfólio de Vanessa Rodrigues de Oliveira | Desenvolvido com foco em Product Ownership e Análise de Negócios.</p>
+    </footer>
+
+    <!-- Script para inicializar os ícones do Lucide e gerenciar a navegação ativa -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            // Função para observar qual seção está visível e destacar o link correspondente
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const currentId = entry.target.id;
+                        
+                        // Remove a classe 'active' de todos os links
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                        });
+
+                        // Adiciona a classe 'active' ao link correspondente
+                        const activeLink = document.querySelector(`.nav-link[href="#${currentId}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                });
+            }, { 
+                rootMargin: '-50% 0px -50% 0px' // Ativa o link quando a seção está no centro da viewport
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Tratamento inicial para o link 'Home' quando a página é carregada.
+            const homeLink = document.querySelector('.nav-link[href="#home"]');
+            if (homeLink) {
+                homeLink.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
