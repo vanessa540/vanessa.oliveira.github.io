@@ -1,1064 +1,1016 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><title>Vanessa Rodrigues | Product Owner • Business Analyst • QA</title>
-        <meta name="description" content="Product Owner com mais de 10 anos em tecnologia, experiência em Business Analysis, QA e gestão de produtos digitais. Atuação focada em discovery, backlog, estratégia e entrega de valor.">
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanessa Rodrigues - Product Owner</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
 
-     <meta name="keywords" content="Product Owner, PO, Business Analyst, Analista de Negócios, Gestão de Produto, Scrum, Agile, QA, Tecnologia, Produtos Digitais">
-
-     <meta name="author" content="Vanessa Rodrigues de Oliveira">
-
-     <!-- SEO para mobile -->
-    <meta name="robots" content="index, follow">
-
-    <!-- Carregamento do Tailwind CSS e da fonte Inter -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script
-
-   <!-- Open Graph / LinkedIn -->
-<meta property="og:title" content="Vanessa Rodrigues | Product Owner">
-<meta property="og:description" content="Product Owner com experiência em QA e Business Analysis, focada em estratégia, discovery e entrega de valor.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://vanessa540.github.io/vanessa.oliveira.github.io/">
-<meta property="og:image" content="https://vanessa540.github.io/vanessa.oliveira.github.io//preview.png">
-
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
     
-      <style>
-        /* Configuração de fonte padrão */
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-            color: #1A4C82; /* Cor base para textos escuros */
-        }
-
-        /* 0. NAVBAR FIXA: Estilo para a barra de navegação */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            background-color: rgba(255, 255, 255, 0.95); /* Fundo semi-transparente */
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-            backdrop-filter: blur(5px);
-        }
-        .nav-link {
-            transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.2s ease;
-            position: relative;
-            padding-bottom: 5px;
-        }
-        .nav-link:hover {
-            color: #5BA8FF;
-            transform: translateY(-2px);
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #5BA8FF;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
-        .nav-link.active {
-            color: #1A4C82;
-            font-weight: 600;
-        }
-
-        /* 1. TELA INICIAL: Efeito Glow Circular */
-        .title-glow {
-            position: relative;
-            z-index: 10;
-            display: inline-block;
-        }
-        .title-glow::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300px; /* Tamanho do brilho */
-            height: 300px;
-            background-color: #A9D4FF;
-            opacity: 0.3; /* Opacidade conforme solicitado */
-            border-radius: 50%;
-            filter: blur(80px); /* Suavidade do brilho */
-            transform: translate(-50%, -50%);
-            z-index: -1;
-        }
-        /* Configuração de fonte padrão */
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-            color: #1A4C82; /* Cor base para textos escuros */
-        }
-         /* Contact Section */
-    .contact-section {
-      background: white;
+    * {
+      font-family: 'Inter', sans-serif;
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
-    .contact-card {
-      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-      border-radius: 20px;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s ease;
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
     }
 
-    .contact-card:hover {
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes slide-in {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .rotating-cycle {
+      animation: rotate 20s linear infinite;
+    }
+
+    .pulse-icon {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    .float-element {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #0d7377 0%, #14FFEC 100%);
+    }
+
+    .gradient-card {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    }
+
+    .skill-bar {
+      position: relative;
+      background: #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 8px;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #0d7377 0%, #14FFEC 100%);
+      border-radius: 10px;
+      transition: width 1s ease-out;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #0d7377 0%, #14FFEC 100%);
+      transform: translateX(-50%);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 16px;
+      background: #0d7377;
+      border: 3px solid white;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(13, 115, 119, 0.2);
+    }
+
+    .arrow-path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: draw 2s ease-in-out forwards;
+    }
+
+    @keyframes draw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-lift:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 10px 30px rgba(13, 115, 119, 0.3);
     }
-
-    .contact-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      filter: grayscale(0);
-    }
-
-    .contact-label {
-      font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-value {
-      color: var(--text-medium);
-      font-size: 0.95rem;
-      word-break: break-word;
-    }
-
-    .contact-link {
-      color: var(--primary-blue);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .contact-link:hover {
-      color: var(--primary-green);
-    }
-
-    .whatsapp-button {
-      display: inline-block;
-      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-      color: white;
-      padding: 1rem 3rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-top: 3rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-    }
-
-    .whatsapp-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-    }
-
-    .cta-container {
-      text-align: center;
-    }
- /* Footer */
-    footer {
-      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-tagline {
-      color: #00b894;
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-top: 1rem;
-    }
-
-    /* Responsividade */
-    @media (max-width: 1200px) {
-      .tools-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-      
-      .indicators-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 992px) {
-      .tools-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      
-      .tool-content-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .comparison-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .ai-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        padding: 6rem 2rem;
-      }
-      
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      
-      .nav-links {
-        gap: 1rem;
-        font-size: 0.9rem;
-      }
-      
-      .tools-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .indicators-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .venn-circle {
-        width: 260px;
-        height: 260px;
-      }
-      
-      .action-results-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .ishikawa-results {
-        grid-template-columns: 1fr;
-      }
-      
-      .impact-cards {
-        grid-template-columns: 1fr;
-      }
-      
-      .ai-cards-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .education-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .tools-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .venn-circle {
-        width: 220px;
-        height: 220px;
-        font-size: 1.1rem;
-      }
-      
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .collab-flow {
-        flex-direction: column;
-      }
-
-      .infographic-flow {
-        padding: 2rem 1rem;
-        justify-content: flex-start;
-      }
-
-      .flow-step-info {
-        min-width: 100px;
-      }
-
-      .step-number {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-      }
-
-      .step-title {
-        font-size: 0.85rem;
-      }
-
-      .step-desc {
-        font-size: 0.75rem;
-      }
-
-      .arrow-svg {
-        width: 35px;
-        height: 30px;
-      }
-
-        /* 0. NAVBAR FIXA: Estilo para a barra de navegação */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            background-color: rgba(255, 255, 255, 0.95); /* Fundo semi-transparente */
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-            backdrop-filter: blur(5px);
-        }
-        .nav-link {
-            transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.2s ease;
-            position: relative;
-            padding-bottom: 5px;
-        }
-        .nav-link:hover {
-            color: #5BA8FF;
-            transform: translateY(-2px);
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #5BA8FF;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
-        .nav-link.active {
-            color: #1A4C82;
-            font-weight: 600;
-        }
-
-        /* 1. TELA INICIAL: Efeito Glow Circular */
-        .title-glow {
-            position: relative;
-            z-index: 10;
-            display: inline-block;
-        }
-        .title-glow::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300px; /* Tamanho do brilho */
-            height: 300px;
-            background-color: #A9D4FF;
-            opacity: 0.3; /* Opacidade conforme solicitado */
-            border-radius: 50%;
-            filter: blur(80px); /* Suavidade do brilho */
-            transform: translate(-50%, -50%);
-            z-index: -1;
-        }
-        
-        /* 2. SOBRE MIM: Borda do Card da Foto com Degradê e Glow Suave */
-        .photo-card-wrapper {
-            padding: 3px; /* Espaço para o degradê */
-            background: linear-gradient(45deg, #5BA8FF, #8C52FF, #FF7AD1);
-            border-radius: 24px;
-            box-shadow: 0 0 20px rgba(137, 71, 255, 0.2); /* Glow suave roxo/lilás */
-            transition: all 0.3s ease;
-        }
-
-        /* 3. HARD SKILLS: Degradê do Elemento na Timeline */
-        .hard-skill-timeline-item {
-            background: linear-gradient(135deg, #92C7FF, #D6BAFF);
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 10;
-        }
-        .hard-skill-timeline-item:hover {
-            transform: scale(1.03); /* Expansão leve na barra */
-            box-shadow: 0 8px 25px rgba(146, 199, 255, 0.5); /* Destaque com brilho */
-        }
-        .hard-skill-dot {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background-color: #D6BAFF;
-            border: 3px solid white;
-            z-index: 20;
-        }
-        
-        /* 5. FORMAÇÃO: Degradê dos Círculos da Timeline */
-        .timeline-circle-gradient {
-            background: linear-gradient(45deg, #74B3FF, #C79CFF);
-        }
-
-        /* 7. TRAJETÓRIA: Barra Lateral de Degradê no Card */
-        .career-card-border {
-            border-left: 8px solid transparent;
-            border-image: linear-gradient(to bottom, #5BA8FF, #8C52FF, #FF7AD1) 1;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        /* 6. MÉTODO DE TRABALHO: Cores das Setas (Usando cores Tailwind customizadas para os degradês) */
-        .flow-blue { background: linear-gradient(45deg, #5BA8FF, #78B9FF); }
-        .flow-purple { background: linear-gradient(45deg, #9B6BFF, #A985FF); }
-        .flow-pink { background: linear-gradient(45deg, #FF7AD1, #FF99E0); }
-        .flow-green { background: linear-gradient(45deg, #7ADFA8, #9BECC5); }
-        .flow-orange { background: linear-gradient(45deg, #FFC16E, #FFD9A0); }
-        .flow-teal { background: linear-gradient(45deg, #2C6E81, #4B8C9F); }
-
-        /* Estilo para os chevrons (setas) */
-        .flow-step-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
-        .flow-step {
-            padding: 1.5rem 2rem;
-            clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%, 5% 50%);
-            margin-right: 1.5rem;
-            min-width: 200px;
-            transition: transform 0.3s ease;
-            animation: flow-swoop 8s infinite alternate; /* Animação flow sutil */
-        }
-        
-        .flow-step:last-child {
-            clip-path: none; /* Último elemento não tem o corte de seta */
-            margin-right: 0;
-            border-radius: 0.75rem;
-        }
-
-        @keyframes flow-swoop {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-3px); }
-        }
-
-    </style>
-</head>
-<body class="min-h-screen bg-white">
-
-    <!-- 0. NAVBAR FIXA (Menu de Navegação) -->
-    <nav class="navbar hidden md:block">
-        <div class="container mx-auto max-w-6xl px-4 py-4 flex justify-center space-x-8">
-            <a href="#home" class="nav-link text-sm uppercase font-medium">Início</a>
-            <a href="#sobre" class="nav-link text-sm uppercase font-medium">Sobre Mim</a>
-            <a href="#hard-skills" class="nav-link text-sm uppercase font-medium">Hard Skills</a>
-            <a href="#soft-skills" class="nav-link text-sm uppercase font-medium">Soft Skills</a>
-            <a href="#metodo" class="nav-link text-sm uppercase font-medium">Método de Trabalho</a>
-            <a href="#cases" class="nav-link text-sm uppercase font-medium">Cases</a>
-            <a href="#formacao" class="nav-link text-sm uppercase font-medium">Formação</a>
-            <a href="#trajetoria" class="nav-link text-sm uppercase font-medium">Trajetória</a>
-            <a href="#contato" class="nav-link text-sm uppercase font-medium">Contato</a>
-   
-    
-    <!-- 1. TELA INICIAL (Home) -->
-    <!-- Adicionado pt-40 para compensar o tamanho da navbar fixa -->
- </ul>
-   </div>
-  </nav><!-- Hero Section -->
-  <section id="home" class="hero">
-   <div class="hero-content">
-    <h1>Vanessa Oliveira</h1>
-    <p>Vanessa Rodrigues | Product Owner • Business Analyst • QA</p><a href="#contact" class="cta-button">Vamos Conversar</a>
-   </div>   
-
-    >
-        
-            <div class="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12 mt-16">
-                
-                <!-- Helper function to generate the PO circle -->
-                <div class="po-circle-wrapper flex flex-col items-center">
-                    <div class="w-32 h-32 flex flex-col justify-center items-center text-white p-4 rounded-full shadow-lg transition duration-300 hover:scale-105 hover:shadow-2xl"
-                         style="background: linear-gradient(135deg, #C3E1FF, #E6D8FF); color: #0B325F;">
-                        <i data-lucide="eye" class="w-8 h-8 mb-1"></i>
-                        <span class="font-semibold text-lg">Visão</span>
-                    </div>
-                    <div class="w-0.5 h-6 bg-gray-300 my-2 md:hidden"></div>
-                </div>
-
-                <i data-lucide="arrow-right-circle" class="w-6 h-6 text-gray-400 hidden md:block"></i>
-                
-                <div class="po-circle-wrapper flex flex-col items-center">
-                    <div class="w-32 h-32 flex flex-col justify-center items-center text-white p-4 rounded-full shadow-lg transition duration-300 hover:scale-105 hover:shadow-2xl"
-                         style="background: linear-gradient(135deg, #A9D4FF, #D6BAFF); color: #0B325F;">
-                        <i data-lucide="trending-up" class="w-8 h-8 mb-1"></i>
-                        <span class="font-semibold text-lg">Estratégia</span>
-                    </div>
-                    <div class="w-0.5 h-6 bg-gray-300 my-2 md:hidden"></div>
-                </div>
-
-                <i data-lucide="arrow-right-circle" class="w-6 h-6 text-gray-400 hidden md:block"></i>
-
-                <div class="po-circle-wrapper flex flex-col items-center">
-                    <div class="w-32 h-32 flex flex-col justify-center items-center text-white p-4 rounded-full shadow-lg transition duration-300 hover:scale-105 hover:shadow-2xl"
-                         style="background: linear-gradient(135deg, #8C52FF, #FF7AD1); color: #FFFFFF;">
-                        <i data-lucide="rocket" class="w-8 h-8 mb-1"></i>
-                        <span class="font-semibold text-lg">Entrega de Valor</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 2. SOBRE MIM (Sessão Sobre/Apresentação) -->
-    <section id="sobre" class="bg-white py-24">
-        <div class="container mx-auto max-w-6xl px-4">
-            <h3 class="text-4xl font-bold text-[#0B325F] mb-12 border-b-2 border-[#E8F1FF] pb-4">⭐ Sobre Mim</h3>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center shadow-xl p-8 rounded-3xl bg-gray-50/50">
-                
-                <!-- Coluna 1: Foto e Contato -->
-                <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                    <div class="photo-card-wrapper mb-8">
-                        <img src="image_9024d7.jpg" 
-                             alt="Foto de Perfil de Vanessa Rodrigues" 
-                             class="rounded-2xl w-full max-w-xs h-auto bg-white" />
-                    </div>
-                    
-                    <a href="#" class="inline-flex items-center justify-center px-8 py-3 font-semibold rounded-full text-white transition duration-300 
-                                       bg-gradient-to-r from-[#5BA8FF] to-[#8C52FF] hover:scale-[1.03] hover:shadow-lg hover:shadow-purple-200"
-                       style="box-shadow: 0 4px 15px rgba(140, 82, 255, 0.4);">
-                        <i data-lucide="download" class="w-5 h-5 mr-2"></i>
-                        Baixar CV
-                    </a>
-                </div>
-                
-                <!-- Coluna 2: Síntese das Qualificações -->
-                <div>
-                    <h4 class="text-3xl font-bold text-[#1A4C82] mb-6">Síntese das Qualificações</h4>
-                    <p class="mb-6 text-gray-700 leading-relaxed">
-                        Profissional com mais de 10 anos de experiência em desenvolvimento de software, atuando em transição para Gestão Estratégica de Produtos Digitais. Certificada **CSPO®**, pós-graduada em Gerenciamento Ágil e especializada em Business Analysis, Scrum, OKRs e Inteligência Artificial aplicada a negócios.
-                    </p>
-                    
-                    <h4 class="text-2xl font-semibold text-[#1A4C82] mb-4">Foco de Atuação:</h4>
-                    <ul class="space-y-3 text-gray-700 list-none pl-0">
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-[#5BA8FF] flex-shrink-0"></i>
-                            Levantamento e especificação de requisitos
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-[#5BA8FF] flex-shrink-0"></i>
-                            Gestão de backlog e escrita de User Stories
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-[#5BA8FF] flex-shrink-0"></i>
-                            Qualidade, testes e validação
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-5 h-5 mr-3 mt-1 text-[#5BA8FF] flex-shrink-0"></i>
-                            Alinhamento com stakeholders e visão de produto
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. HARD SKILLS (Infográfico Horizontal - Corrigido) -->
-    <section id="hard-skills" class="bg-white py-24">
-        <div class="container mx-auto max-w-6xl px-4">
-            <h3 class="text-4xl font-bold text-[#0B325F] mb-16 text-center border-b-2 border-[#E8F1FF] pb-4">⭐ Hard Skills</h3>
-
-            <!-- Layout Responsivo para a Timeline Horizontal (Scroll Horizontal em Telas Pequenas) -->
-            <div class="overflow-x-auto pb-6">
-                <div class="relative flex items-center justify-between min-w-[1400px] px-8 pt-8">
-                    <!-- Linha de Conexão Central -->
-                    <div class="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 transform -translate-y-1/2"></div>
-                    
-                    <div class="flex space-x-8">
-                        <!-- Skill Item 1 -->
-                        <div class="w-56 flex flex-col items-center text-center">
-                            <div class="hard-skill-timeline-item text-white p-4 rounded-xl shadow-md min-h-32 flex flex-col items-center justify-center">
-                                <i data-lucide="award" class="w-8 h-8 mb-2 text-white"></i>
-                                <p class="font-semibold text-sm">Product Ownership (CSPO®)</p>
-                                <div class="hard-skill-dot"></div>
-                            </div>
-                        </div>
-
-                        <!-- Skill Item 2 -->
-                        <div class="w-56 flex flex-col items-center text-center">
-                            <div class="hard-skill-timeline-item text-white p-4 rounded-xl shadow-md min-h-32 flex flex-col items-center justify-center">
-                                <i data-lucide="search" class="w-8 h-8 mb-2 text-white"></i>
-                                <p class="font-semibold text-sm">Business Analysis (Discovery, requisitos, especificações)</p>
-                                <div class="hard-skill-dot"></div>
-                            </div>
-                        </div>
-
-                        <!-- Skill Item 3 -->
-                        <div class="w-56 flex flex-col items-center text-center">
-                            <div class="hard-skill-timeline-item text-white p-4 rounded-xl shadow-md min-h-32 flex flex-col items-center justify-center">
-                                <i data-lucide="file-text" class="w-8 h-8 mb-2 text-white"></i>
-                                <p class="font-semibold text-sm">User Stories, BDD, TDD</p>
-                                <div class="hard-skill-dot"></div>
-                            </div>
-                        </div>
-
-                        <!-- Skill Item 4 -->
-                        <div class="w-56 flex flex-col items-center text-center">
-                            <div class="hard-skill-timeline-item text-white p-4 rounded-xl shadow-md min-h-32 flex flex-col items-center justify-center">
-                                <i data-lucide="list-checks" class="w-8 h-8 mb-2 text-white"></i>
-                                <p class="font-semibold text-sm">Gestão de Backlog & Roadmap</p>
-                                <div class="hard-skill-dot"></div>
-                            </div>
-                        </div>
-
-                        <!-- Skill Item 5 -->
-                        <div class="w-56 flex flex-col items-center text-center">
-                            <div class="hard-skill-timeline-item text-white p-4 rounded-xl shadow-md min-h-32 flex flex-col items-center justify-center">
-                                <i data-lucide="smartphone" class="w-8 h-8 mb-2 text-white"></i>
-                                <p class="font-semibold text-sm">Testes Mobile, Funcionais, Regressão</p>
-                                <div class="hard-skill-dot"></div>
-                            </div>
-                        </div>
-
-                        <!-- Skill Item 6 -->
-                        <div class="w-56 flex flex-col items-center text-center">
-                            <div class="hard-skill-timeline-item text-white p-4 rounded-xl shadow-md min-h-32 flex flex-col items-center justify-center">
-                                <i data-lucide="tool" class="w-8 h-8 mb-2 text-white"></i>
-                                <p class="font-semibold text-sm">Ferramentas: Jira, Confluence, Figma</p>
-                                <div class="hard-skill-dot"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 4. SOFT SKILLS (Cartões Coloridos) -->
-        <section id="soft-skills" class="py-24" style="background-color: #F3F8FF;">
-            <div class="container mx-auto max-w-6xl px-4">
-               <h3 class="text-4xl font-bold text-[#0B325F] mb-16 text-center border-b-2 border-[#E8F1FF] pb-4">⭐ Soft Skills</h3>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Helper function to create soft skill card -->
-                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
-                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
-                    <i data-lucide="message-square" class="w-8 h-8 text-[#5BA8FF] mb-4"></i>
-                    <p class="font-semibold text-gray-800">Comunicação com Stakeholders</p>
-                </div>
-                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
-                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
-                    <i data-lucide="layers" class="w-8 h-8 text-[#8C52FF] mb-4"></i>
-                    <p class="font-semibold text-gray-800">Visão Sistêmica</p>
-                </div>
-                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
-                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
-                    <i data-lucide="lightbulb" class="w-8 h-8 text-[#FF7AD1] mb-4"></i>
-                    <p class="font-semibold text-gray-800">Pensamento Analítico</p>
-                </div>
-                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
-                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
-                    <i data-lucide="users" class="w-8 h-8 text-[#5BA8FF] mb-4"></i>
-                    <p class="font-semibold text-gray-800">Liderança Colaborativa</p>
-                </div>
-                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
-                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
-                    <i data-lucide="zap" class="w-8 h-8 text-[#8C52FF] mb-4"></i>
-                    <p class="font-semibold text-gray-800">Priorização Estratégica</p>
-                </div>
-                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
-                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
-                    <i data-lucide="shuffle" class="w-8 h-8 text-[#FF7AD1] mb-4"></i>
-                    <p class="font-semibold text-gray-800">Adaptabilidade</p>
-                </div>
-                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
-                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
-                    <i data-lucide="target" class="w-8 h-8 text-[#5BA8FF] mb-4"></i>
-                    <p class="font-semibold text-gray-800">Foco em Resultado</p>
-                </div>
-                <div class="soft-skill-card p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer 
-                            bg-gradient-to-br from-[#E6EEFF] to-white hover:shadow-2xl hover:translate-y-[-6px]">
-                    <i data-lucide="handshake" class="w-8 h-8 text-[#8C52FF] mb-4"></i>
-                    <p class="font-semibold text-gray-800">Negociação</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. MÉTODO DE TRABALHO – “Fluxo PO” (Setas Coloridas) -->
-    <section id="metodo" class="bg-white py-24">
-        <div class="container mx-auto max-w-6xl px-4">
-            <h3 class="text-4xl font-bold text-[#0B325F] mb-16 text-center border-b-2 border-[#E8F1FF] pb-4">⭐ Método de Trabalho – "Fluxo PO"</h3>
-
-            <!-- Layout Responsivo para o Fluxo (Scroll Horizontal em Telas Pequenas) -->
-            <div class="overflow-x-auto pb-6">
-                <div class="flow-step-container flex items-center justify-start md:justify-center min-w-[1200px] md:min-w-full">
-
-                    <div class="flow-step flow-blue text-white rounded-xl shadow-xl">
-                        <i data-lucide="briefcase" class="w-6 h-6 mb-2"></i>
-                        <p class="font-bold text-sm">Discovery & Levantamento</p>
-                    </div>
-                    
-                    <div class="flow-step flow-purple text-white rounded-xl shadow-xl">
-                        <i data-lucide="map" class="w-6 h-6 mb-2"></i>
-                        <p class="font-bold text-sm">Mapeamento de Requisitos</p>
-                    </div>
-
-                    <div class="flow-step flow-pink text-white rounded-xl shadow-xl">
-                        <i data-lucide="sort-asc" class="w-6 h-6 mb-2"></i>
-                        <p class="font-bold text-sm">Priorização e Backlog Refinement</p>
-                    </div>
-                    
-                    <div class="flow-step flow-green text-white rounded-xl shadow-xl">
-                        <i data-lucide="clipboard-list" class="w-6 h-6 mb-2"></i>
-                        <p class="font-bold text-sm">User Stories & Critérios de Aceite</p>
-                    </div>
-                    
-                    <div class="flow-step flow-orange text-white rounded-xl shadow-xl">
-                        <i data-lucide="calendar-check" class="w-6 h-6 mb-2"></i>
-                        <p class="font-bold text-sm">Acompanhamento da Sprint</p>
-                    </div>
-
-                    <div class="flow-step flow-teal text-white rounded-xl shadow-xl">
-                        <i data-lucide="rocket" class="w-6 h-6 mb-2"></i>
-                        <p class="font-bold text-sm">Validação, UAT e Entrega de Valor</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ⭐ CASES DE PRODUTO -->
-<section id="cases" class="bg-gray-50 py-24">
-  <div class="container mx-auto max-w-6xl px-4">
-    
-    <h3 class="text-4xl font-bold text-[#0B325F] mb-6 text-center border-b-2 border-[#E8F1FF] pb-4">
-      ⭐ Cases de Produto
-    </h3>
-
-    <p class="text-center text-gray-600 max-w-3xl mx-auto mb-16">
-      Exemplos práticos de atuação como Product Owner e Business Analyst, focados em resolução de problemas,
-      tomada de decisão e entrega de valor ao negócio.
-    </p>
-
-    <!-- GRID DE CASES -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-      <!-- CASE 1 -->
-      <div class="case-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
-        <h4 class="text-2xl font-bold text-[#1A4C82] mb-4">
-          📱 Otimização do Fluxo de Contratação – Seguro de Vida
-        </h4>
-
-        <p class="text-gray-700 mb-6">
-          Atuação como PO/BA em produto digital do setor financeiro, com foco na melhoria da experiência do usuário
-          e aumento da conversão.
-        </p>
-
-        <button 
-          class="open-case text-[#5BA8FF] font-semibold hover:underline"
-          data-case="case1">
-          Ver detalhes do case →
-        </button>
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full w-full overflow-auto bg-gray-50">
+  <div class="w-full min-h-full"><!-- Navigation Menu -->
+   <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+     <div class="flex justify-between items-center">
+      <div class="font-bold text-xl text-gray-800">
+       VRO
       </div>
-
-      <!-- CASE 2 -->
-      <div class="case-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
-        <h4 class="text-2xl font-bold text-[#1A4C82] mb-4">
-          🧪 Estruturação de Processo de UAT
-        </h4>
-
-        <p class="text-gray-700 mb-6">
-          Criação e padronização do processo de testes de aceitação do usuário,
-          garantindo qualidade e previsibilidade nas entregas.
-        </p>
-
-        <button 
-          class="open-case text-[#5BA8FF] font-semibold hover:underline"
-          data-case="case2">
-          Ver detalhes do case →
-        </button>
+      <div class="flex gap-6"><a href="#inicio" class="text-gray-700 hover:text-teal-700 transition font-medium text-sm">Início</a> <a href="#sobre" class="text-gray-700 hover:text-teal-700 transition font-medium text-sm">Sobre</a> <a href="#skills" class="text-gray-700 hover:text-teal-700 transition font-medium text-sm">Skills</a> <a href="#metodo" class="text-gray-700 hover:text-teal-700 transition font-medium text-sm">Método</a> <a href="#cases" class="text-gray-700 hover:text-teal-700 transition font-medium text-sm">Cases</a> <a href="#formacao" class="text-gray-700 hover:text-teal-700 transition font-medium text-sm">Formação</a> <a href="#trajetoria" class="text-gray-700 hover:text-teal-700 transition font-medium text-sm">Trajetória</a> <a href="#contato" class="text-gray-700 hover:text-teal-700 transition font-medium text-sm">Contato</a>
       </div>
-
+     </div>
     </div>
+   </nav><!-- Hero Section -->
+   <section id="inicio" class="gradient-bg text-white py-20 px-6 mt-16">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-12">
+      <h1 id="nome" class="text-5xl font-bold mb-4">Vanessa Rodrigues de Oliveira</h1>
+      <p id="headline" class="text-xl font-light mb-2">Product Owner | Analista de Negócios | QA</p>
+      <p class="text-lg opacity-90">+10 anos em Transformação Digital • CSPO® • Estratégia, Inovação e Liderança de Produtos</p>
+      <div class="flex justify-center items-center gap-6 mt-6 text-sm">
+       <div class="flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg><span id="localizacao">Rio de Janeiro, RJ – Brasil</span>
+       </div>
+      </div>
+      <div class="flex justify-center items-center gap-8 mt-4">
+       <div class="flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg><span id="telefone">(21) 99999-9999</span>
+       </div>
+       <div class="flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg><span id="email">vanessa@email.com</span>
+       </div>
+       <div class="flex items-center gap-2">
+        <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+        </svg><span id="linkedin">linkedin.com/in/vanessarodrigues</span>
+       </div>
+      </div>
+     </div><!-- Agile Cycle Animation -->
+     <div class="flex justify-center mt-16">
+      <div class="relative w-96 h-96">
+       <svg class="rotating-cycle" viewbox="0 0 200 200" width="384" height="384"><!-- Outer circle --> <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" /> <!-- Discovery --> <g transform="translate(100, 10)">
+         <circle cx="0" cy="0" r="12" fill="white" />
+         <text x="0" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="600">
+          Discovery
+         </text>
+        </g> <!-- Estratégia --> <g transform="translate(177, 50)">
+         <circle cx="0" cy="0" r="12" fill="white" />
+         <text x="0" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="600">
+          Estratégia
+         </text>
+        </g> <!-- Backlog --> <g transform="translate(177, 150)">
+         <circle cx="0" cy="0" r="12" fill="white" />
+         <text x="0" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="600">
+          Backlog
+         </text>
+        </g> <!-- Desenvolvimento --> <g transform="translate(100, 190)">
+         <circle cx="0" cy="0" r="12" fill="white" />
+         <text x="0" y="-20" text-anchor="middle" fill="white" font-size="11" font-weight="600">
+          Desenvolvimento
+         </text>
+        </g> <!-- Validação --> <g transform="translate(23, 150)">
+         <circle cx="0" cy="0" r="12" fill="white" />
+         <text x="0" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="600">
+          Validação
+         </text>
+        </g> <!-- Entrega de Valor --> <g transform="translate(23, 50)">
+         <circle cx="0" cy="0" r="12" fill="white" />
+         <text x="-5" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="600">
+          Entrega
+         </text>
+         <text x="-5" y="42" text-anchor="middle" fill="white" font-size="11" font-weight="600">
+          de Valor
+         </text>
+        </g> <!-- Arrows --> <defs>
+         <marker id="arrowhead" markerwidth="10" markerheight="10" refx="9" refy="3" orient="auto">
+          <polygon points="0 0, 10 3, 0 6" fill="white" />
+         </marker>
+        </defs> <path d="M 100 22 A 68 68 0 0 1 165 65" fill="none" stroke="white" stroke-width="1.5" marker-end="url(#arrowhead)" />
+       </svg>
+       <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+        <div class="pulse-icon">
+         <svg class="w-16 h-16 mx-auto mb-2" fill="white" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+         </svg>
+        </div>
+        <p class="text-white font-semibold text-lg">Método Ágil</p>
+        <p class="text-white text-sm opacity-90">Ciclo Contínuo</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Sobre Mim -->
+   <section id="sobre" class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-4xl font-bold text-gray-800 text-center mb-8">Sobre Mim</h2>
+     <div class="max-w-4xl mx-auto mb-12">
+      <p id="sobre_texto" class="text-gray-700 leading-relaxed text-lg text-center">Profissional com mais de 10 anos de experiência em Transformação Digital, especializada em Product Ownership, Análise de Negócios e QA. Certificada CSPO®, atuo na interseção entre estratégia, tecnologia e entrega de valor, liderando produtos digitais com foco em inovação, metodologias ágeis e excelência operacional.</p>
+     </div><!-- Journey Infographic -->
+     <div class="flex items-center justify-center">
+      <div class="flex items-center justify-between max-w-4xl w-full">
+       <div class="text-center flex-1">
+        <div class="w-20 h-20 mx-auto mb-4 bg-teal-100 rounded-full flex items-center justify-center">
+         <svg class="w-10 h-10 text-teal-700" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+         </svg>
+        </div>
+        <p class="font-semibold text-gray-800">QA</p>
+        <p class="text-sm text-gray-600">Qualidade</p>
+       </div>
+       <div class="flex-shrink-0 mx-4">
+        <svg class="w-12 h-6" fill="none" stroke="#0d7377" viewbox="0 0 48 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 12h44m-6-6l6 6-6 6" />
+        </svg>
+       </div>
+       <div class="text-center flex-1">
+        <div class="w-20 h-20 mx-auto mb-4 bg-cyan-100 rounded-full flex items-center justify-center">
+         <svg class="w-10 h-10 text-cyan-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+         </svg>
+        </div>
+        <p class="font-semibold text-gray-800">Análise de Negócios</p>
+        <p class="text-sm text-gray-600">Estratégia</p>
+       </div>
+       <div class="flex-shrink-0 mx-4">
+        <svg class="w-12 h-6" fill="none" stroke="#14FFEC" viewbox="0 0 48 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 12h44m-6-6l6 6-6 6" />
+        </svg>
+       </div>
+       <div class="text-center flex-1">
+        <div class="w-20 h-20 mx-auto mb-4 bg-teal-100 rounded-full flex items-center justify-center">
+         <svg class="w-10 h-10 text-teal-700" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+         </svg>
+        </div>
+        <p class="font-semibold text-gray-800">Product Owner</p>
+        <p class="text-sm text-gray-600">Produto</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Hard Skills -->
+   <section id="skills" class="py-20 px-6 bg-gray-100">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-4xl font-bold text-gray-800 text-center mb-16">Hard Skills</h2>
+     <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+       <div class="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+        <svg class="w-8 h-8 text-teal-700" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold text-gray-800 mb-2">Gestão de Backlog</h3>
+       <p class="text-gray-600">Priorização estratégica e refinamento contínuo do product backlog</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+       <div class="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
+        <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold text-gray-800 mb-2">Roadmap de Produto</h3>
+       <p class="text-gray-600">Criação e comunicação de visão de produto e planejamento estratégico</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+       <div class="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+        <svg class="w-8 h-8 text-teal-700" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold text-gray-800 mb-2">User Stories</h3>
+       <p class="text-gray-600">Elaboração de histórias de usuário com critérios de aceitação claros</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+       <div class="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
+        <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold text-gray-800 mb-2">Discovery &amp; Research</h3>
+       <p class="text-gray-600">Técnicas de descoberta de produto e pesquisa com usuários</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+       <div class="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+        <svg class="w-8 h-8 text-teal-700" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold text-gray-800 mb-2">QA &amp; Testes</h3>
+       <p class="text-gray-600">Gestão de qualidade, UAT e validação de entregas</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-lg hover-lift">
+       <div class="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center mb-4">
+        <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+       </div>
+       <h3 class="text-xl font-bold text-gray-800 mb-2">Ferramentas</h3>
+       <p class="text-gray-600">Jira, Confluence, Figma, Azure DevOps, Miro</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Soft Skills -->
+   <section class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-4xl font-bold text-gray-800 text-center mb-16">Soft Skills</h2>
+     <div class="grid md:grid-cols-4 gap-6">
+      <div class="gradient-card p-6 rounded-xl text-center hover-lift">
+       <svg class="w-12 h-12 mx-auto mb-4 text-teal-700" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+       </svg>
+       <h3 class="font-bold text-gray-800 mb-2">Comunicação</h3>
+       <p class="text-sm text-gray-600">Clara e assertiva com stakeholders</p>
+      </div>
+      <div class="gradient-card p-6 rounded-xl text-center hover-lift">
+       <svg class="w-12 h-12 mx-auto mb-4 text-cyan-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+       </svg>
+       <h3 class="font-bold text-gray-800 mb-2">Liderança</h3>
+       <p class="text-sm text-gray-600">Inspiração e alinhamento de times</p>
+      </div>
+      <div class="gradient-card p-6 rounded-xl text-center hover-lift">
+       <svg class="w-12 h-12 mx-auto mb-4 text-teal-700" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+       </svg>
+       <h3 class="font-bold text-gray-800 mb-2">Pensamento Analítico</h3>
+       <p class="text-sm text-gray-600">Decisões baseadas em dados</p>
+      </div>
+      <div class="gradient-card p-6 rounded-xl text-center hover-lift">
+       <svg class="w-12 h-12 mx-auto mb-4 text-cyan-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+       </svg>
+       <h3 class="font-bold text-gray-800 mb-2">Adaptabilidade</h3>
+       <p class="text-sm text-gray-600">Flexibilidade em cenários complexos</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Método de Trabalho -->
+   <section id="metodo" class="py-20 px-6 bg-gray-100">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-4xl font-bold text-gray-800 text-center mb-4">Método de Trabalho</h2>
+     <p class="text-center text-gray-600 mb-16">Processo ágil de ponta a ponta</p>
+     <div class="flex flex-wrap justify-center items-center gap-4"><!-- Discovery -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center w-40">
+       <svg class="w-12 h-12 mx-auto mb-3 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+       </svg>
+       <p class="font-bold text-gray-800">Discovery</p>
+      </div>
+      <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+      </svg><!-- Requisitos -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center w-40">
+       <svg class="w-12 h-12 mx-auto mb-3 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+       </svg>
+       <p class="font-bold text-gray-800">Requisitos</p>
+      </div>
+      <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+      </svg><!-- Priorização -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center w-40">
+       <svg class="w-12 h-12 mx-auto mb-3 text-indigo-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+       </svg>
+       <p class="font-bold text-gray-800">Prioriza��ão</p>
+      </div>
+      <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+      </svg><!-- Sprint -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center w-40">
+       <svg class="w-12 h-12 mx-auto mb-3 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+       </svg>
+       <p class="font-bold text-gray-800">Sprint</p>
+      </div>
+      <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+      </svg><!-- UAT -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center w-40">
+       <svg class="w-12 h-12 mx-auto mb-3 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+       </svg>
+       <p class="font-bold text-gray-800">UAT</p>
+      </div>
+      <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+      </svg><!-- Entrega de Valor -->
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center w-40">
+       <svg class="w-12 h-12 mx-auto mb-3 text-indigo-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+       </svg>
+       <p class="font-bold text-gray-800">Entrega de Valor</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Agilidade do Product Owner -->
+   <section id="agilidade" class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-4xl font-bold text-gray-800 text-center mb-4">Agilidade do Product Owner</h2>
+     <p class="text-center text-gray-600 mb-16">Como o PO atua dentro do método ágil na prática</p><!-- Ciclo Ágil do PO -->
+     <div class="mb-20">
+      <h3 class="text-2xl font-bold text-gray-800 text-center mb-12">Ciclo Ágil do Product Owner</h3>
+      <div class="flex justify-center">
+       <div class="relative w-full max-w-2xl">
+        <svg viewbox="0 0 400 400" class="w-full h-auto"><!-- Círculo externo --> <circle cx="200" cy="200" r="160" fill="none" stroke="#e5e7eb" stroke-width="3" /> <circle cx="200" cy="200" r="160" fill="none" stroke="url(#gradient-circle)" stroke-width="3" stroke-dasharray="1005" stroke-dashoffset="0">
+          <animate attributename="stroke-dashoffset" from="1005" to="0" dur="3s" fill="freeze" />
+         </circle> <defs>
+          <lineargradient id="gradient-circle" x1="0%" y1="0%" x2="100%" y2="100%">
+           <stop offset="0%" style="stop-color:#0d7377;stop-opacity:1" />
+           <stop offset="100%" style="stop-color:#14FFEC;stop-opacity:1" />
+          </lineargradient>
+         </defs> <!-- Discovery (topo) --> <g transform="translate(200, 30)">
+          <circle cx="0" cy="0" r="28" fill="#0d7377" />
+          <text x="0" y="6" text-anchor="middle" fill="white" font-size="24" font-weight="bold">
+           🔍
+          </text>
+          <text x="0" y="50" text-anchor="middle" fill="#1f2937" font-size="13" font-weight="600">
+           Discovery
+          </text>
+          <text x="0" y="66" text-anchor="middle" fill="#6b7280" font-size="10">
+           Descoberta
+          </text>
+         </g> <!-- Refinamento (direita superior) --> <g transform="translate(313, 87)">
+          <circle cx="0" cy="0" r="28" fill="#0a9396" />
+          <text x="0" y="6" text-anchor="middle" fill="white" font-size="24" font-weight="bold">
+           ✨
+          </text>
+          <text x="0" y="50" text-anchor="middle" fill="#1f2937" font-size="13" font-weight="600">
+           Refinamento
+          </text>
+          <text x="0" y="66" text-anchor="middle" fill="#6b7280" font-size="10">
+           Detalhamento
+          </text>
+         </g> <!-- Priorização (direita) --> <g transform="translate(360, 200)">
+          <circle cx="0" cy="0" r="28" fill="#0bb5ba" />
+          <text x="0" y="6" text-anchor="middle" fill="white" font-size="24" font-weight="bold">
+           🎯
+          </text>
+          <text x="0" y="50" text-anchor="middle" fill="#1f2937" font-size="13" font-weight="600">
+           Priorização
+          </text>
+          <text x="0" y="66" text-anchor="middle" fill="#6b7280" font-size="10">
+           Valor
+          </text>
+         </g> <!-- Sprint (direita inferior) --> <g transform="translate(313, 313)">
+          <circle cx="0" cy="0" r="28" fill="#0dd1d6" />
+          <text x="0" y="6" text-anchor="middle" fill="white" font-size="24" font-weight="bold">
+           ⚡
+          </text>
+          <text x="0" y="50" text-anchor="middle" fill="#1f2937" font-size="13" font-weight="600">
+           Sprint
+          </text>
+          <text x="0" y="66" text-anchor="middle" fill="#6b7280" font-size="10">
+           Execução
+          </text>
+         </g> <!-- Review (baixo) --> <g transform="translate(200, 370)">
+          <circle cx="0" cy="0" r="28" fill="#0fedd9" />
+          <text x="0" y="6" text-anchor="middle" fill="white" font-size="24" font-weight="bold">
+           👁️
+          </text>
+          <text x="0" y="-38" text-anchor="middle" fill="#1f2937" font-size="13" font-weight="600">
+           Review
+          </text>
+          <text x="0" y="-22" text-anchor="middle" fill="#6b7280" font-size="10">
+           Validação
+          </text>
+         </g> <!-- Feedback (esquerda inferior) --> <g transform="translate(87, 313)">
+          <circle cx="0" cy="0" r="28" fill="#11ffdf" />
+          <text x="0" y="6" text-anchor="middle" fill="white" font-size="24" font-weight="bold">
+           💬
+          </text>
+          <text x="0" y="50" text-anchor="middle" fill="#1f2937" font-size="13" font-weight="600">
+           Feedback
+          </text>
+          <text x="0" y="66" text-anchor="middle" fill="#6b7280" font-size="10">
+           Retorno
+          </text>
+         </g> <!-- Aprendizado (esquerda) --> <g transform="translate(40, 200)">
+          <circle cx="0" cy="0" r="28" fill="#13ffe5" />
+          <text x="0" y="6" text-anchor="middle" fill="white" font-size="24" font-weight="bold">
+           📚
+          </text>
+          <text x="-50" y="6" text-anchor="middle" fill="#1f2937" font-size="12" font-weight="600">
+           Aprendizado
+          </text>
+          <text x="-50" y="20" text-anchor="middle" fill="#6b7280" font-size="10">
+           Contínuo
+          </text>
+         </g> <!-- Centro --> <circle cx="200" cy="200" r="50" fill="url(#gradient-center)" /> <defs>
+          <lineargradient id="gradient-center" x1="0%" y1="0%" x2="100%" y2="100%">
+           <stop offset="0%" style="stop-color:#0d7377;stop-opacity:0.9" />
+           <stop offset="100%" style="stop-color:#14FFEC;stop-opacity:0.9" />
+          </lineargradient>
+         </defs> <text x="200" y="195" text-anchor="middle" fill="white" font-size="16" font-weight="bold">
+          Ciclo
+         </text> <text x="200" y="212" text-anchor="middle" fill="white" font-size="16" font-weight="bold">
+          Ágil
+         </text>
+        </svg>
+       </div>
+      </div>
+     </div><!-- Cerimônias Ágeis -->
+     <div class="mb-20">
+      <h3 class="text-2xl font-bold text-gray-800 text-center mb-12">Cerimônias Ágeis</h3>
+      <div class="grid md:grid-cols-5 gap-4">
+       <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-6 rounded-xl text-center hover-lift border-2 border-teal-200">
+        <div class="text-4xl mb-3">
+         📋
+        </div>
+        <h4 class="font-bold text-gray-800 mb-2 text-sm">Sprint Planning</h4>
+        <p class="text-xs text-gray-600">Planejamento e definição de metas</p>
+       </div>
+       <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-6 rounded-xl text-center hover-lift border-2 border-teal-200">
+        <div class="text-4xl mb-3">
+         ☀️
+        </div>
+        <h4 class="font-bold text-gray-800 mb-2 text-sm">Daily</h4>
+        <p class="text-xs text-gray-600">Alinhamento diário do time</p>
+       </div>
+       <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-6 rounded-xl text-center hover-lift border-2 border-teal-200">
+        <div class="text-4xl mb-3">
+         🔧
+        </div>
+        <h4 class="font-bold text-gray-800 mb-2 text-sm">Refinamento</h4>
+        <p class="text-xs text-gray-600">Detalhamento do backlog</p>
+       </div>
+       <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-6 rounded-xl text-center hover-lift border-2 border-teal-200">
+        <div class="text-4xl mb-3">
+         🎬
+        </div>
+        <h4 class="font-bold text-gray-800 mb-2 text-sm">Review</h4>
+        <p class="text-xs text-gray-600">Demonstração de valor</p>
+       </div>
+       <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-6 rounded-xl text-center hover-lift border-2 border-teal-200">
+        <div class="text-4xl mb-3">
+         🔄
+        </div>
+        <h4 class="font-bold text-gray-800 mb-2 text-sm">Retrospectiva</h4>
+        <p class="text-xs text-gray-600">Melhoria contínua</p>
+       </div>
+      </div>
+     </div><!-- Artefatos do PO -->
+     <div class="mb-20">
+      <h3 class="text-2xl font-bold text-gray-800 text-center mb-12">Artefatos do Product Owner</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+       <div class="bg-white border-2 border-teal-200 rounded-xl p-6 hover-lift">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center"><span class="text-2xl">📝</span>
+         </div>
+         <h4 class="font-bold text-gray-800">Product Backlog</h4>
+        </div>
+        <p class="text-sm text-gray-600">Lista priorizada de funcionalidades e melhorias do produto</p>
+       </div>
+       <div class="bg-white border-2 border-cyan-200 rounded-xl p-6 hover-lift">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center"><span class="text-2xl">📖</span>
+         </div>
+         <h4 class="font-bold text-gray-800">User Stories (BDD)</h4>
+        </div>
+        <p class="text-sm text-gray-600">Histórias de usuário com cenários de comportamento</p>
+       </div>
+       <div class="bg-white border-2 border-teal-200 rounded-xl p-6 hover-lift">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center"><span class="text-2xl">✅</span>
+         </div>
+         <h4 class="font-bold text-gray-800">Critérios de Aceite</h4>
+        </div>
+        <p class="text-sm text-gray-600">Condições para validação e aceite das entregas</p>
+       </div>
+       <div class="bg-white border-2 border-cyan-200 rounded-xl p-6 hover-lift">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center"><span class="text-2xl">🗺️</span>
+         </div>
+         <h4 class="font-bold text-gray-800">Roadmap</h4>
+        </div>
+        <p class="text-sm text-gray-600">Visão estratégica e planejamento de longo prazo</p>
+       </div>
+       <div class="bg-white border-2 border-teal-200 rounded-xl p-6 hover-lift">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center"><span class="text-2xl">🎯</span>
+         </div>
+         <h4 class="font-bold text-gray-800">OKRs</h4>
+        </div>
+        <p class="text-sm text-gray-600">Objetivos e resultados-chave mensuráveis</p>
+       </div>
+       <div class="bg-white border-2 border-cyan-200 rounded-xl p-6 hover-lift">
+        <div class="flex items-center gap-3 mb-4">
+         <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center"><span class="text-2xl">📊</span>
+         </div>
+         <h4 class="font-bold text-gray-800">Kanban</h4>
+        </div>
+        <p class="text-sm text-gray-600">Visualização do fluxo de trabalho e entregas</p>
+       </div>
+      </div>
+     </div><!-- Mindset Ágil -->
+     <div>
+      <h3 class="text-2xl font-bold text-gray-800 text-center mb-12">Mindset Ágil do Product Owner</h3>
+      <div class="gradient-bg rounded-2xl p-10">
+       <div class="grid md:grid-cols-4 gap-8 text-white">
+        <div class="text-center">
+         <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 pulse-icon"><span class="text-4xl">💎</span>
+         </div>
+         <h4 class="font-bold text-lg mb-2">Foco em Valor</h4>
+         <p class="text-sm opacity-90">Priorizar o que gera mais impacto para o negócio e usuários</p>
+        </div>
+        <div class="text-center">
+         <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 pulse-icon"><span class="text-4xl">🤝</span>
+         </div>
+         <h4 class="font-bold text-lg mb-2">Colaboração</h4>
+         <p class="text-sm opacity-90">Trabalho em equipe entre stakeholders, dev e design</p>
+        </div>
+        <div class="text-center">
+         <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 pulse-icon"><span class="text-4xl">🔁</span>
+         </div>
+         <h4 class="font-bold text-lg mb-2">Feedback Contínuo</h4>
+         <p class="text-sm opacity-90">Validação constante com usuários e métricas</p>
+        </div>
+        <div class="text-center">
+         <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 pulse-icon"><span class="text-4xl">📈</span>
+         </div>
+         <h4 class="font-bold text-lg mb-2">Melhoria Constante</h4>
+         <p class="text-sm opacity-90">Evolução iterativa e adaptação às mudanças</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Cases de Produto -->
+   <section id="cases" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-4xl font-bold text-gray-800 text-center mb-16">Cases de Produto</h2>
+     <div class="grid md:grid-cols-2 gap-8"><!-- Case 1 -->
+      <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover-lift">
+       <div class="flex items-center gap-4 mb-6">
+        <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center">
+         <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+         </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800">App de Gestão Logística</h3>
+       </div>
+       <div class="space-y-4">
+        <div>
+         <p class="font-semibold text-gray-700 mb-2">🎯 Problema</p>
+         <p class="text-gray-600">Processos manuais gerando retrabalho e baixa rastreabilidade</p>
+        </div>
+        <div>
+         <p class="font-semibold text-gray-700 mb-2">⚡ Ação</p>
+         <p class="text-gray-600">Liderança na definição de MVP, backlog priorizado e gestão ágil de entregas</p>
+        </div>
+        <div>
+         <p class="font-semibold text-gray-700 mb-2">✅ Resultado</p><!-- Gráfico de redução de retrabalho -->
+         <div class="bg-purple-50 rounded-lg p-4 mb-3">
+          <p class="text-sm font-semibold text-gray-700 mb-3">Redução de Retrabalho</p>
+          <div class="flex items-end gap-3 h-32">
+           <div class="flex-1 flex flex-col items-center">
+            <div class="w-full bg-red-400 rounded-t-lg" style="height: 100%;"></div>
+            <p class="text-xs font-bold text-gray-700 mt-2">Antes</p>
+            <p class="text-xs text-gray-600">100%</p>
+           </div>
+           <div class="flex-1 flex flex-col items-center">
+            <div class="w-full bg-green-500 rounded-t-lg" style="height: 60%;"></div>
+            <p class="text-xs font-bold text-gray-700 mt-2">Depois</p>
+            <p class="text-xs text-gray-600">60%</p>
+           </div>
+          </div>
+          <div class="flex items-center justify-center gap-2 mt-3 text-green-600 font-bold">
+           <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M12 13a1 1 0 100 2h5a1 1 0 001-1V9a1 1 0 10-2 0v2.586l-4.293-4.293a1 1 0 00-1.414 0L8 9.586 3.707 5.293a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0L11 9.414 14.586 13H12z" clip-rule="evenodd" transform="rotate(180 10 10)" />
+           </svg><span>-40% retrabalho</span>
+          </div>
+         </div><!-- Gráfico de rastreabilidade -->
+         <div class="bg-purple-50 rounded-lg p-4">
+          <p class="text-sm font-semibold text-gray-700 mb-3">Rastreabilidade Operacional</p>
+          <div class="flex items-center gap-3">
+           <div class="flex-1">
+            <div class="flex justify-between text-xs text-gray-600 mb-1"><span>Antes</span> <span>30%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-3">
+             <div class="bg-red-400 h-3 rounded-full" style="width: 30%"></div>
+            </div>
+           </div>
+          </div>
+          <div class="flex items-center gap-3 mt-3">
+           <div class="flex-1">
+            <div class="flex justify-between text-xs text-gray-600 mb-1"><span>Depois</span> <span>100%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-3">
+             <div class="bg-green-500 h-3 rounded-full" style="width: 100%"></div>
+            </div>
+           </div>
+          </div>
+          <div class="flex items-center justify-center gap-2 mt-3 text-green-600 font-bold">
+           <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" />
+           </svg><span>+70% rastreabilidade</span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Case 2 -->
+      <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover-lift">
+       <div class="flex items-center gap-4 mb-6">
+        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center">
+         <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+         </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800">Plataforma de Compliance</h3>
+       </div>
+       <div class="space-y-4">
+        <div>
+         <p class="font-semibold text-gray-700 mb-2">🎯 Problema</p>
+         <p class="text-gray-600">Necessidade de automação em processos críticos de conformidade</p>
+        </div>
+        <div>
+         <p class="font-semibold text-gray-700 mb-2">⚡ Ação</p>
+         <p class="text-gray-600">Descoberta de produto, roadmap estratégico e orquestração com múltiplos stakeholders</p>
+        </div>
+        <div>
+         <p class="font-semibold text-gray-700 mb-2">✅ Resultado</p><!-- Gráfico de alinhamento -->
+         <div class="bg-blue-50 rounded-lg p-4 mb-3">
+          <p class="text-sm font-semibold text-gray-700 mb-3">Alinhamento Stakeholders</p>
+          <div class="flex items-center justify-center gap-6">
+           <div class="text-center">
+            <div class="w-20 h-20 rounded-full border-8 border-red-400 flex items-center justify-center mb-2"><span class="text-2xl font-bold text-red-600">45%</span>
+            </div>
+            <p class="text-xs text-gray-600">Antes</p>
+           </div>
+           <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+           </svg>
+           <div class="text-center">
+            <div class="w-20 h-20 rounded-full border-8 border-green-500 flex items-center justify-center mb-2"><span class="text-2xl font-bold text-green-600">100%</span>
+            </div>
+            <p class="text-xs text-gray-600">Depois</p>
+           </div>
+          </div>
+         </div><!-- Indicadores de entrega -->
+         <div class="bg-blue-50 rounded-lg p-4">
+          <p class="text-sm font-semibold text-gray-700 mb-3">Entrega do Projeto</p>
+          <div class="grid grid-cols-2 gap-3">
+           <div class="bg-white rounded-lg p-3 text-center">
+            <div class="text-2xl mb-1">
+             ⏱️
+            </div>
+            <p class="text-xs text-gray-600 mb-1">Prazo</p>
+            <p class="text-lg font-bold text-green-600">100%</p>
+            <p class="text-xs text-gray-500">No tempo</p>
+           </div>
+           <div class="bg-white rounded-lg p-3 text-center">
+            <div class="text-2xl mb-1">
+             🎯
+            </div>
+            <p class="text-xs text-gray-600 mb-1">Escopo</p>
+            <p class="text-lg font-bold text-green-600">100%</p>
+            <p class="text-xs text-gray-500">Completo</p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Formação & Certificações -->
+   <section id="formacao" class="py-20 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="text-4xl font-bold text-gray-800 text-center mb-16">Formação &amp; Certificações</h2>
+     <div class="relative">
+      <div class="absolute left-0 right-0 top-6 h-1 bg-gradient-to-r from-purple-600 to-blue-600"></div>
+      <div class="flex justify-between relative">
+       <div class="text-center w-48">
+        <div class="w-12 h-12 bg-white border-4 border-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+         <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+         </svg>
+        </div>
+        <p class="font-bold text-gray-800 mb-1">Graduação</p>
+        <p class="text-sm text-gray-600">Análise e Desenvolvimento de Sistemas</p>
+       </div>
+       <div class="text-center w-48">
+        <div class="w-12 h-12 bg-white border-4 border-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+         <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+         </svg>
+        </div>
+        <p class="font-bold text-gray-800 mb-1">CSPO®</p>
+        <p class="text-sm text-gray-600">Certified Scrum Product Owner</p>
+       </div>
+       <div class="text-center w-48">
+        <div class="w-12 h-12 bg-white border-4 border-indigo-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+         <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+         </svg>
+        </div>
+        <p class="font-bold text-gray-800 mb-1">Especialização</p>
+        <p class="text-sm text-gray-600">Transformação Digital &amp; Gestão Ágil</p>
+       </div>
+       <div class="text-center w-48">
+        <div class="w-12 h-12 bg-white border-4 border-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+         <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+         </svg>
+        </div>
+        <p class="font-bold text-gray-800 mb-1">Certificação</p>
+        <p class="text-sm text-gray-600">Product Management &amp; Analytics</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Trajetória Profissional -->
+   <section id="trajetoria" class="py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+     <h2 class="text-4xl font-bold text-gray-800 text-center mb-16">Trajetória Profissional</h2>
+     <div class="relative">
+      <div class="timeline-line"></div>
+      <div class="space-y-12"><!-- Item 1 -->
+       <div class="relative pl-12 md:pl-0 md:ml-auto md:w-1/2 md:pr-12">
+        <div class="timeline-dot" style="top: 0;"></div>
+        <div class="bg-white border-2 border-purple-200 rounded-xl p-6 hover-lift">
+         <div class="flex items-center gap-3 mb-3">
+          <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+          <div>
+           <h3 class="font-bold text-gray-800">Product Owner</h3>
+           <p class="text-sm text-gray-600">2022 - Presente</p>
+          </div>
+         </div>
+         <p class="text-gray-700">Liderança de produtos digitais, definição de roadmap estratégico, priorização de backlog e gestão de stakeholders para entrega de valor contínuo</p>
+        </div>
+       </div><!-- Item 2 -->
+       <div class="relative pl-12 md:pl-0 md:mr-auto md:w-1/2 md:pl-12">
+        <div class="timeline-dot" style="top: 0;"></div>
+        <div class="bg-white border-2 border-blue-200 rounded-xl p-6 hover-lift">
+         <div class="flex items-center gap-3 mb-3">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+          <div>
+           <h3 class="font-bold text-gray-800">Analista de Negócios</h3>
+           <p class="text-sm text-gray-600">2018 - 2022</p>
+          </div>
+         </div>
+         <p class="text-gray-700">Mapeamento de processos, levantamento de requisitos, análise de viabilidade e bridge entre áreas de negócio e tecnologia</p>
+        </div>
+       </div><!-- Item 3 -->
+       <div class="relative pl-12 md:pl-0 md:ml-auto md:w-1/2 md:pr-12">
+        <div class="timeline-dot" style="top: 0;"></div>
+        <div class="bg-white border-2 border-indigo-200 rounded-xl p-6 hover-lift">
+         <div class="flex items-center gap-3 mb-3">
+          <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <div>
+           <h3 class="font-bold text-gray-800">Analista de QA</h3>
+           <p class="text-sm text-gray-600">2014 - 2018</p>
+          </div>
+         </div>
+         <p class="text-gray-700">Execução de testes manuais e automatizados, validação de requisitos, gestão de defeitos e garantia da qualidade de software</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Idiomas -->
+   <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+     <h2 class="text-4xl font-bold text-gray-800 text-center mb-16">Idiomas</h2>
+     <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-xl p-8 shadow-lg">
+       <div class="flex items-center gap-4 mb-4">
+        <div class="text-4xl">
+         🇧🇷
+        </div>
+        <div>
+         <h3 class="text-xl font-bold text-gray-800">Português</h3>
+         <p class="text-gray-600">Nativo</p>
+        </div>
+       </div>
+       <div class="skill-bar">
+        <div class="skill-fill" style="width: 100%"></div>
+       </div>
+      </div>
+      <div class="bg-white rounded-xl p-8 shadow-lg">
+       <div class="flex items-center gap-4 mb-4">
+        <div class="text-4xl">
+         🇺🇸
+        </div>
+        <div>
+         <h3 class="text-xl font-bold text-gray-800">Inglês</h3>
+         <p class="text-gray-600">Intermediário</p>
+        </div>
+       </div>
+       <div class="skill-bar">
+        <div class="skill-fill" style="width: 60%"></div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contato CTA -->
+   <section id="contato" class="gradient-bg text-white py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+     <h2 class="text-4xl font-bold mb-4">Vamos Conversar?</h2>
+     <p id="contato_mensagem" class="text-xl mb-8 opacity-90">Vamos conversar sobre produtos, estratégia e entrega de valor.</p>
+     <div class="flex flex-wrap justify-center gap-4"><a href="#" class="bg-white text-teal-700 px-8 py-4 rounded-lg font-semibold flex items-center gap-2 hover:bg-gray-100 transition">
+       <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+       </svg> LinkedIn </a> <a href="#" class="bg-white text-teal-700 px-8 py-4 rounded-lg font-semibold flex items-center gap-2 hover:bg-gray-100 transition">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+       </svg> E-mail </a> <a href="#" class="bg-white text-teal-700 px-8 py-4 rounded-lg font-semibold flex items-center gap-2 hover:bg-gray-100 transition">
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+       </svg> WhatsApp </a>
+     </div>
+    </div>
+   </section>
   </div>
-</section>
-
-    <!-- 5. FORMAÇÃO & CERTIFICAÇÕES (Infográfico Horizontal) -->
-    <section id="formacao" class="bg-white py-24">
-        <div class="container mx-auto max-w-6xl px-4">
-            <h3 class="text-4xl font-bold text-[#0B325F] mb-16 text-center border-b-2 border-[#E8F1FF] pb-4">⭐ Formação & Certificações</h3>
-            
-            <div class="relative flex justify-between items-center pb-8 overflow-x-auto">
-                <!-- Linha de Conexão -->
-                <div class="absolute top-[20px] left-0 right-0 h-1 bg-gray-200 mx-10"></div>
-                
-                <!-- Timeline Items -->
-                <div class="flex space-x-12 min-w-max relative z-10 px-10">
-                    <!-- Helper component for Timeline Item -->
-                    <div class="w-48 flex flex-col items-center justify-start text-center">
-                        <div class="timeline-circle-gradient w-10 h-10 rounded-full flex items-center justify-center shadow-lg mb-4">
-                            <i data-lucide="graduation-cap" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-100 h-28 flex flex-col justify-center">
-                            <p class="font-semibold text-sm">Pós-Graduação – Gerenciamento Ágil (2024)</p>
-                        </div>
-                    </div>
-
-                    <div class="w-48 flex flex-col items-center justify-start text-center">
-                        <div class="timeline-circle-gradient w-10 h-10 rounded-full flex items-center justify-center shadow-lg mb-4">
-                            <i data-lucide="book-open" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-100 h-28 flex flex-col justify-center">
-                            <p class="font-semibold text-sm">Graduação – Banco de Dados (2022)</p>
-                        </div>
-                    </div>
-                    
-                    <div class="w-48 flex flex-col items-center justify-start text-center">
-                        <div class="timeline-circle-gradient w-10 h-10 rounded-full flex items-center justify-center shadow-lg mb-4">
-                            <i data-lucide="certificate" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-100 h-28 flex flex-col justify-center">
-                            <p class="font-semibold text-sm">Certificação Scrum Product Owner® (CSPO)</p>
-                        </div>
-                    </div>
-
-                    <div class="w-48 flex flex-col items-center justify-start text-center">
-                        <div class="timeline-circle-gradient w-10 h-10 rounded-full flex items-center justify-center shadow-lg mb-4">
-                            <i data-lucide="briefcase" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-100 h-28 flex flex-col justify-center">
-                            <p class="font-semibold text-sm">EXIN/BCS Business Analysis (2025)</p>
-                        </div>
-                    </div>
-
-                    <div class="w-48 flex flex-col items-center justify-start text-center">
-                        <div class="timeline-circle-gradient w-10 h-10 rounded-full flex items-center justify-center shadow-lg mb-4">
-                            <i data-lucide="git-branch" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-100 h-28 flex flex-col justify-center">
-                            <p class="font-semibold text-sm">Roadmap e Priorização – PM3 (2025)</p>
-                        </div>
-                    </div>
-                    
-                    <div class="w-48 flex flex-col items-center justify-start text-center">
-                        <div class="timeline-circle-gradient w-10 h-10 rounded-full flex items-center justify-center shadow-lg mb-4">
-                            <i data-lucide="target" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl shadow-lg border border-gray-100 h-28 flex flex-col justify-center">
-                            <p class="font-semibold text-sm">OKR Foundation – OKR Institute (2025)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. TRAJETÓRIA PROFISSIONAL (Timeline Vertical) -->
-    <section id="trajetoria" class="bg-gray-50 py-24">
-        <div class="container mx-auto max-w-4xl px-4">
-            <h3 class="text-4xl font-bold text-[#0B325F] mb-16 text-center border-b-2 border-[#E8F1FF] pb-4">⭐ Trajetória Profissional</h3>
-            
-            
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. CONTATO (Com Botões Degradê) -->
-     </section><!-- Contact Section -->
-  <section id="contact" class="contact-section">
-   <div class="container">
-    <h2 class="section-title">📞 Contato</h2>
-    <p class="section-subtitle">Entre em contato para conversarmos sobre como posso ajudar na transformação da sua organização</p>
-    <div class="contact-grid">
-     <div class="contact-card">
-      <div class="contact-icon">
-       📍
-      </div>
-      <div class="contact-label">
-       Localização
-      </div>
-      <div class="contact-value">
-       Rio de Janeiro, Brasil
-      </div>
-     </div>
-     <div class="contact-card">
-      <div class="contact-icon">
-       ✉️
-      </div>
-      <div class="contact-label">
-       E-mail
-      </div>
-       <div class="contact-value"><a href="mailto:vanessaoliveiravro@gmail.com" class="contact-link">vanessaoliveiravro@gmail.com</a>
-      </div>
-     </div>
-     <div class="contact-card">
-      <div class="contact-icon">
-       💼
-      </div>
-      <div class="contact-label">
-       LinkedIn
-      </div>
-      <div class="contact-value"><a href="https://www.linkedin.com/in/vanessa-rodrigues-0198a557" target="_blank" rel="noopener noreferrer" class="contact-link">/in/vanessa-rodrigues-0198a557</a>
-      </div>
-     </div>
-     <div class="contact-card">
-      <div class="contact-icon">
-       💬
-      </div>
-      <div class="contact-label">
-       WhatsApp
-      </div>
-      <div class="contact-value">
-       (21) 99245-3344
-      </div>
-     </div>
-    </div>
-    <div class="cta-container"><a href="https://wa.me/5521992453344" target="_blank" rel="noopener noreferrer" class="whatsapp-button"> 💬 Iniciar Conversa </a>
-    </div>
-   </div>
-
-    </section>
-
-    <!-- Footer simples -->
-    <footer class="bg-[#0B325F] text-center text-white py-4 text-sm">
-        <p>Portfólio de Vanessa Rodrigues de Oliveira | Desenvolvido com foco em Product Ownership e Análise de Negócios.</p>
-    </footer>
-
-    <!-- MODAL CASES -->
-<div id="case-modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50 px-4">
-  <div class="bg-white max-w-3xl w-full rounded-2xl p-8 relative overflow-y-auto max-h-[90vh]">
-
-    <button id="close-case" class="absolute top-4 right-4 text-gray-500 hover:text-black">
-      <i data-lucide="x"></i>
-    </button>
-
-    <div id="case-content"></div>
-  </div>
-</div>
-
-    <!-- Script para inicializar os ícones do Lucide e gerenciar a navegação ativa -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            // Função para observar qual seção está visível e destacar o link correspondente
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const currentId = entry.target.id;
-                        
-                        // Remove a classe 'active' de todos os links
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                        });
-
-                        // Adiciona a classe 'active' ao link correspondente
-                        const activeLink = document.querySelector(`.nav-link[href="#${currentId}"]`);
-                        if (activeLink) {
-                            activeLink.classList.add('active');
-                        }
-                    }
-                });
-            }, { 
-                rootMargin: '-50% 0px -50% 0px' // Ativa o link quando a seção está no centro da viewport
-            });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-            
-            // Tratamento inicial para o link 'Home' quando a página é carregada.
-            const homeLink = document.querySelector('.nav-link[href="#home"]');
-            if (homeLink) {
-                homeLink.classList.add('active');
-            }
-        });
-    <!-- MODAL CASES (HTML do modal vem ANTES disso) -->
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-
-    /* ===============================
-       INICIALIZAÇÃO GERAL
-    =============================== */
-    lucide.createIcons();
-
-    /* ===============================
-       LÓGICA DO MODAL DE CASES
-    =============================== */
-    const cases = {
-      case1: `
-        <h3 class="text-3xl font-bold text-[#0B325F] mb-6">
-          Otimização do Fluxo de Contratação – Seguro de Vida
-        </h3>
-
-        <p><strong>Contexto:</strong> Produto digital com alto abandono no fluxo.</p><br>
-
-        <p><strong>Problema:</strong> Complexidade excessiva no formulário.</p><br>
-
-        <p><strong>Objetivo:</strong> Aumentar conversão.</p><br>
-
-        <p><strong>Ações como PO:</strong></p>
-        <ul class="list-disc pl-6 mb-4">
-          <li>Discovery com stakeholders</li>
-          <li>Mapeamento da jornada</li>
-          <li>Priorização do backlog</li>
-          <li>Escrita de user stories</li>
-        </ul>
-
-        <p><strong>Resultado:</strong> Redução de abandono e melhor UX.</p>
-      `
+  <script>
+    const defaultConfig = {
+      nome: "Vanessa Rodrigues de Oliveira",
+      headline: "Product Owner | Analista de Negócios | QA",
+      localizacao: "Rio de Janeiro, RJ – Brasil",
+      telefone: "(21) 99999-9999",
+      email: "vanessa@email.com",
+      linkedin: "linkedin.com/in/vanessarodrigues",
+      sobre_texto: "Profissional com mais de 10 anos de experiência em Transformação Digital, especializada em Product Ownership, Análise de Negócios e QA. Certificada CSPO®, atuo na interseção entre estratégia, tecnologia e entrega de valor, liderando produtos digitais com foco em inovação, metodologias ágeis e excelência operacional.",
+      contato_mensagem: "Vamos conversar sobre produtos, estratégia e entrega de valor.",
+      background_color: "#0d7377",
+      secondary_color: "#14FFEC",
+      text_color: "#1f2937",
+      card_color: "#ffffff",
+      accent_color: "#0891b2"
     };
 
-    const modal = document.getElementById('case-modal');
-    const content = document.getElementById('case-content');
-    const closeBtn = document.getElementById('close-case');
+    async function onConfigChange(config) {
+      document.getElementById('nome').textContent = config.nome || defaultConfig.nome;
+      document.getElementById('headline').textContent = config.headline || defaultConfig.headline;
+      document.getElementById('localizacao').textContent = config.localizacao || defaultConfig.localizacao;
+      document.getElementById('telefone').textContent = config.telefone || defaultConfig.telefone;
+      document.getElementById('email').textContent = config.email || defaultConfig.email;
+      document.getElementById('linkedin').textContent = config.linkedin || defaultConfig.linkedin;
+      document.getElementById('sobre_texto').textContent = config.sobre_texto || defaultConfig.sobre_texto;
+      document.getElementById('contato_mensagem').textContent = config.contato_mensagem || defaultConfig.contato_mensagem;
 
-    document.querySelectorAll('.open-case').forEach(button => {
-      button.addEventListener('click', () => {
-        content.innerHTML = cases[button.dataset.case];
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        lucide.createIcons();
+      const gradientElements = document.querySelectorAll('.gradient-bg');
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+      gradientElements.forEach(el => {
+        el.style.background = `linear-gradient(135deg, ${bgColor} 0%, ${secondaryColor} 100%)`;
       });
-    });
+    }
 
-    closeBtn.addEventListener('click', () => {
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    });
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.secondary_color || defaultConfig.secondary_color,
+            set: (value) => {
+              config.secondary_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ secondary_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.card_color || defaultConfig.card_color,
+            set: (value) => {
+              config.card_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ card_color: value });
+              }
+            }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              config.accent_color = value;
+              if (window.elementSdk) {
+                window.elementSdk.setConfig({ accent_color: value });
+              }
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
 
-  });
-</script>
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["nome", config.nome || defaultConfig.nome],
+        ["headline", config.headline || defaultConfig.headline],
+        ["localizacao", config.localizacao || defaultConfig.localizacao],
+        ["telefone", config.telefone || defaultConfig.telefone],
+        ["email", config.email || defaultConfig.email],
+        ["linkedin", config.linkedin || defaultConfig.linkedin],
+        ["sobre_texto", config.sobre_texto || defaultConfig.sobre_texto],
+        ["contato_mensagem", config.contato_mensagem || defaultConfig.contato_mensagem]
+      ]);
+    }
 
-</body>
-</html>
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9adf848630db8aef',t:'MTc2NTczNDM1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+               </html>
+
 
 
 
