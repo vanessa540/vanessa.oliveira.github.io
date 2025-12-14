@@ -3,14 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Técnico - Vanessa Oliveira (PO/BA)</title>
+    <title><title>Vanessa Rodrigues | Product Owner • Business Analyst • QA</title>
+        <meta name="description" content="Product Owner com mais de 10 anos em tecnologia, experiência em Business Analysis, QA e gestão de produtos digitais. Atuação focada em discovery, backlog, estratégia e entrega de valor.">
+
+     <meta name="keywords" content="Product Owner, PO, Business Analyst, Analista de Negócios, Gestão de Produto, Scrum, Agile, QA, Tecnologia, Produtos Digitais">
+
+     <meta name="author" content="Vanessa Rodrigues de Oliveira">
+
+     <!-- SEO para mobile -->
+    <meta name="robots" content="index, follow">
+
     <!-- Carregamento do Tailwind CSS e da fonte Inter -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest"></script
+
+   <!-- Open Graph / LinkedIn -->
+<meta property="og:title" content="Vanessa Rodrigues | Product Owner">
+<meta property="og:description" content="Product Owner com experiência em QA e Business Analysis, focada em estratégia, discovery e entrega de valor.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vanessa540.github.io/vanessa.oliveira.github.io/">
+<meta property="og:image" content="https://vanessa540.github.io/vanessa.oliveira.github.io//preview.png">
+
     
-    <style>
+      <style>
+        /* Configuração de fonte padrão */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            color: #1A4C82; /* Cor base para textos escuros */
+        }
+
+        /* 0. NAVBAR FIXA: Estilo para a barra de navegação */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color: rgba(255, 255, 255, 0.95); /* Fundo semi-transparente */
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(5px);
+        }
+        .nav-link {
+            transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.2s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        .nav-link:hover {
+            color: #5BA8FF;
+            transform: translateY(-2px);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #5BA8FF;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        .nav-link.active {
+            color: #1A4C82;
+            font-weight: 600;
+        }
+
+        /* 1. TELA INICIAL: Efeito Glow Circular */
+        .title-glow {
+            position: relative;
+            z-index: 10;
+            display: inline-block;
+        }
+        .title-glow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px; /* Tamanho do brilho */
+            height: 300px;
+            background-color: #A9D4FF;
+            opacity: 0.3; /* Opacidade conforme solicitado */
+            border-radius: 50%;
+            filter: blur(80px); /* Suavidade do brilho */
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
         /* Configuração de fonte padrão */
         body {
             font-family: 'Inter', sans-serif;
@@ -384,14 +466,6 @@
 </head>
 <body class="min-h-screen bg-white">
 
-    <!-- Open Graph / LinkedIn -->
-<meta property="og:title" content="Vanessa Rodrigues | Product Owner">
-<meta property="og:description" content="Product Owner com experiência em QA e Business Analysis, focada em estratégia, discovery e entrega de valor.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://vanessa540.github.io/vanessa.oliveira.github.io/">
-<meta property="og:image" content="https://vanessa540.github.io/vanessa.oliveira.github.io//preview.png">
-
-
     <!-- 0. NAVBAR FIXA (Menu de Navegação) -->
     <nav class="navbar hidden md:block">
         <div class="container mx-auto max-w-6xl px-4 py-4 flex justify-center space-x-8">
@@ -417,16 +491,8 @@
     <p>Vanessa Rodrigues | Product Owner • Business Analyst • QA</p><a href="#contact" class="cta-button">Vamos Conversar</a>
    </div>   
 
-            <!-- Elemento visual: Infográfico PO Circular -->
-      <meta name="description" content="Product Owner com mais de 10 anos em tecnologia, experiência em Business Analysis, QA e gestão de produtos digitais. Atuação focada em discovery, backlog, estratégia e entrega de valor.">
-
-       <meta name="keywords" content="Product Owner, PO, Business Analyst, Analista de Negócios, Gestão de Produto, Scrum, Agile, QA, Tecnologia, Produtos Digitais">
-
-       <meta name="author" content="Vanessa Rodrigues de Oliveira">
-
-         <!-- SEO para mobile -->
-         <meta name="robots" content="index, follow">
-
+    >
+        
             <div class="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12 mt-16">
                 
                 <!-- Helper function to generate the PO circle -->
@@ -993,6 +1059,7 @@
 
 </body>
 </html>
+
 
 
 
