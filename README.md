@@ -1,3 +1,3 @@
 # vanessa.oliveira.github.io
 Vanessa Oliveira - Portifólio Profissional 
-preview.png
+#preview.png
