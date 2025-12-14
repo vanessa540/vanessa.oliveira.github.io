@@ -17,6 +17,83 @@
             scroll-behavior: smooth;
             color: #1A4C82; /* Cor base para textos escuros */
         }
+         /* Contact Section */
+    .contact-section {
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .contact-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      filter: grayscale(0);
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-value {
+      color: var(--text-medium);
+      font-size: 0.95rem;
+      word-break: break-word;
+    }
+
+    .contact-link {
+      color: var(--primary-blue);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-link:hover {
+      color: var(--primary-green);
+    }
+
+    .whatsapp-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: white;
+      padding: 1rem 3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 3rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    }
+
+    .whatsapp-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    }
+
+    .cta-container {
+      text-align: center;
+    }
+
 
         /* 0. NAVBAR FIXA: Estilo para a barra de navegação */
         .navbar {
@@ -776,5 +853,6 @@
 
 </body>
 </html>
+
 
 
