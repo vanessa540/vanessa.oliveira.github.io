@@ -158,49 +158,71 @@
      </div><!-- Agile Cycle Animation -->
      <div class="flex justify-center mt-16">
       <div class="relative w-96 h-96">
-       <svg class="rotating-cycle" viewbox="0 0 200 200" width="384" height="384"><!-- Outer circle --> <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" /> <!-- Discovery --> <g transform="translate(100, 10)">
-         <circle cx="0" cy="0" r="12" fill="white" />
-         <text x="0" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="600">
-          Discovery
-         </text>
-        </g> <!-- Estratégia --> <g transform="translate(177, 50)">
-         <circle cx="0" cy="0" r="12" fill="white" />
-         <text x="0" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="600">
-          Estratégia
-         </text>
-        </g> <!-- Backlog --> <g transform="translate(177, 150)">
-         <circle cx="0" cy="0" r="12" fill="white" />
-         <text x="0" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="600">
-          Backlog
-         </text>
-        </g> <!-- Desenvolvimento --> <g transform="translate(100, 190)">
-         <circle cx="0" cy="0" r="12" fill="white" />
-         <text x="0" y="-20" text-anchor="middle" fill="white" font-size="11" font-weight="600">
-          Desenvolvimento
-         </text>
-        </g> <!-- Validação --> <g transform="translate(23, 150)">
-         <circle cx="0" cy="0" r="12" fill="white" />
-         <text x="0" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="600">
-          Validação
-         </text>
-        </g> <!-- Entrega de Valor --> <g transform="translate(23, 50)">
-         <circle cx="0" cy="0" r="12" fill="white" />
-         <text x="-5" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="600">
-          Entrega
-         </text>
-         <text x="-5" y="42" text-anchor="middle" fill="white" font-size="11" font-weight="600">
-          de Valor
-         </text>
-        </g> <!-- Arrows --> <defs>
-         <marker id="arrowhead" markerwidth="10" markerheight="10" refx="9" refy="3" orient="auto">
-          <polygon points="0 0, 10 3, 0 6" fill="white" />
-         </marker>
-        </defs> <path d="M 100 22 A 68 68 0 0 1 165 65" fill="none" stroke="white" stroke-width="1.5" marker-end="url(#arrowhead)" />
-       </svg>
-       <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-        <div class="pulse-icon">
-         <svg class="w-16 h-16 mx-auto mb-2" fill="white" viewbox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-         </svg>
+       <svg
+  class="rotating-cycle"
+  viewBox="-20 -20 240 240"
+  width="384"
+  height="384"
+  preserveAspectRatio="xMidYMid meet">
+
+  <!-- Outer circle -->
+  <circle cx="100" cy="100" r="90"
+    fill="none"
+    stroke="rgba(255,255,255,0.3)"
+    stroke-width="2"/>
+
+  <!-- Discovery -->
+  <g transform="translate(100, 18)">
+    <circle r="12" fill="white" />
+    <text x="0" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="600">
+      Discovery
+    </text>
+  </g>
+
+  <!-- Estratégia -->
+  <g transform="translate(170, 55)">
+    <circle r="12" fill="white" />
+    <text x="0" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="600">
+      Estratégia
+    </text>
+  </g>
+
+  <!-- Backlog -->
+  <g transform="translate(170, 145)">
+    <circle r="12" fill="white" />
+    <text x="0" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="600">
+      Backlog
+    </text>
+  </g>
+
+  <!-- Desenvolvimento -->
+  <g transform="translate(100, 182)">
+    <circle r="12" fill="white" />
+    <text x="0" y="-16" text-anchor="middle" fill="white" font-size="11" font-weight="600">
+      Desenvolvimento
+    </text>
+  </g>
+
+  <!-- Validação -->
+  <g transform="translate(30, 145)">
+    <circle r="12" fill="white" />
+    <text x="0" y="30" text-anchor="middle" fill="white" font-size="11" font-weight="600">
+      Validação
+    </text>
+  </g>
+
+  <!-- Entrega de Valor -->
+  <g transform="translate(30, 55)">
+    <circle r="12" fill="white" />
+    <text x="0" y="28" text-anchor="middle" fill="white" font-size="11" font-weight="600">
+      Entrega
+    </text>
+    <text x="0" y="42" text-anchor="middle" fill="white" font-size="11" font-weight="600">
+      de Valor
+    </text>
+  </g>
+        
+</svg>
         </div>
         <p class="text-white font-semibold text-lg">Método Ágil</p>
         <p class="text-white text-sm opacity-90">Ciclo Contínuo</p>
@@ -874,6 +896,13 @@
        </svg> WhatsApp </a>
      </div>
     </div>
+    </section><!-- Footer -->
+  <footer class="footer">
+   <div class="footer-container">
+    <p class="footer-copyright">© 2025 Vanessa Oliveira. Todos os direitos reservados.</p>
+    <p class="footer-tagline">Transformação Digital • Estratégia • Inovação e Liderança de Produtos</p>
+    <p class="footer-subtitle">Desenvolvido com foco em resultados e transformações sustentáveis</p>
+   </div>
    </section>
   </div>
   <script>
@@ -990,6 +1019,7 @@
   </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9adf848630db8aef',t:'MTc2NTczNDM1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
                </html>
+
 
 
 
