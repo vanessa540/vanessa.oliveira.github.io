@@ -128,47 +128,7 @@
     }
    
    /* =========================
-   ROADMAP CURVO – HERO
-   ========================= */
-
-.roadmap-container {
-  margin-top: 4rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.roadmap-svg {
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-}
-
-/* Linha animada (fluxo) */
-.roadmap-line {
-  animation: flow 6s linear infinite;
-}
-
-/* Etapas */
-.step circle {
-  fill: white;
-  animation: pulseStep 4s ease-in-out infinite;
-}
-
-.step text {
-  font-size: 12px;
-  fill: #2d3748;
-  font-weight: 600;
-  text-anchor: middle;
-}
-
-/* Etapa final (Valor) */
-.step.final circle {
-  fill: #48bb78;
-}
-
-/* =========================
-   ROADMAP – FUNDO E ANIMAÇÃO
+   ROADMAP – SEÇÃO COMPLETA
    ========================= */
 
 .roadmap-section {
@@ -176,8 +136,8 @@
   padding: 6rem 2rem;
   background: linear-gradient(
     135deg,
-    #0f766e 0%,   /* teal escuro */
-    #0369a1 50%,  /* azul médio */
+    #0f766e 0%,
+    #0369a1 50%,
     #0f766e 100%
   );
   overflow: hidden;
@@ -190,21 +150,103 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.25), transparent 45%),
-    radial-gradient(circle at 80% 70%, rgba(52, 211, 153, 0.25), transparent 45%);
-  animation: glowMove 10s ease-in-out infinite alternate;
+    radial-gradient(circle at 20% 30%, rgba(56,189,248,0.25), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(52,211,153,0.25), transparent 45%);
+  animation: glowPulse 8s ease-in-out infinite alternate;
   z-index: 0;
 }
 
-@keyframes glowMove {
-  from { opacity: 0.45; }
+@keyframes glowPulse {
+  from { opacity: 0.4; }
   to   { opacity: 0.9; }
 }
 
-/* Mobile */
+/* Container acima do fundo */
+.roadmap-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================
+   SVG ROADMAP
+   ========================= */
+
+.roadmap-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Linha principal (animação restaurada) */
+.roadmap-path {
+  stroke: #7dd3fc;
+  stroke-width: 3;
+  fill: none;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 3.5s ease-out forwards;
+  filter: drop-shadow(0 0 6px rgba(56,189,248,0.8));
+}
+
+/* Animação da linha */
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* =========================
+   PONTOS DO ROADMAP
+   ========================= */
+
+.roadmap-point {
+  fill: #ffffff;
+  animation: pulsePoint 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.9));
+}
+
+/* Ponto final – Valor */
+.roadmap-point.valor {
+  fill: #34d399;
+  filter: drop-shadow(0 0 12px rgba(52,211,153,1));
+  animation-delay: 1.5s;
+}
+
+@keyframes pulsePoint {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.85;
+  }
+}
+
+/* =========================
+   TEXTOS
+   ========================= */
+
+.roadmap-label {
+  fill: #f8fafc;
+  font-size: 14px;
+  font-weight: 600;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   RESPONSIVO
+   ========================= */
+
 @media (max-width: 768px) {
-  .step text {
-    font-size: 10px;
+  .roadmap-section {
+    padding: 4rem 1rem;
+  }
+
+  .roadmap-label {
+    font-size: 12px;
   }
 }
 
@@ -1135,6 +1177,7 @@
   </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9adf848630db8aef',t:'MTc2NTczNDM1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
                </html>
+
 
 
 
