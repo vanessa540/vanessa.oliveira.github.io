@@ -796,73 +796,80 @@
    <section id="cases" class="py-20 px-6 bg-gray-50">
     <div class="max-w-6xl mx-auto">
      <h2 class="text-4xl font-bold text-gray-800 text-center mb-16">Cases de Produto</h2>
-     <div class="grid md:grid-cols-2 gap-8"><!-- Case 1 -->
-      <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover-lift">
-       <div class="flex items-center gap-4 mb-6">
-        <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center">
-         <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-         </svg>
-        </div>
-        <h3 class="text-2xl font-bold text-gray-800">App de Gestão Logística</h3>
-       </div>
-       <div class="space-y-4">
-        <div>
-         <p class="font-semibold text-gray-700 mb-2">🎯 Problema</p>
-         <p class="text-gray-600">Processos manuais gerando retrabalho e baixa rastreabilidade</p>
-        </div>
-        <div>
-         <p class="font-semibold text-gray-700 mb-2">⚡ Ação</p>
-         <p class="text-gray-600">Liderança na definição de MVP, backlog priorizado e gestão ágil de entregas</p>
-        </div>
-        <div>
-         <p class="font-semibold text-gray-700 mb-2">✅ Resultado</p><!-- Gráfico de redução de retrabalho -->
-         <div class="flex items-end gap-3 h-40">
-
+    <!-- Case 1 -->
+<div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover-lift flex flex-col h-full">
+  <div class="flex items-center gap-4 mb-6">
+    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center">
+      <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+      </svg>
+    </div>
+    <h3 class="text-2xl font-bold text-gray-800">App de Gestão Logística</h3>
+  </div>
+  <div class="space-y-4 flex-1">
+    <!-- Problema -->
+    <div>
+      <p class="font-semibold text-gray-700 mb-2">🎯 Problema</p>
+      <p class="text-gray-600">Processos manuais gerando retrabalho e baixa rastreabilidade</p>
+    </div>
+    <!-- Ação -->
+    <div>
+      <p class="font-semibold text-gray-700 mb-2">⚡ Ação</p>
+      <p class="text-gray-600">Liderança na definição de MVP, backlog priorizado e gestão ágil de entregas</p>
+    </div>
+    <!-- Resultado -->
+    <div>
+      <p class="font-semibold text-gray-700 mb-2">✅ Resultado</p>
+      <!-- Gráfico de Redução de Retrabalho -->
+      <div class="bg-purple-50 rounded-lg p-4 mb-3">
+        <p class="text-sm font-semibold text-gray-700 mb-3">Redução de Retrabalho</p>
+        <div class="flex items-end gap-3 h-40">
           <!-- Antes -->
           <div class="flex-1 flex flex-col items-center">
             <div class="w-full bg-red-400 rounded-t-lg" style="height: 128px;"></div>
             <p class="text-xs font-bold text-gray-700 mt-2">Antes</p>
             <p class="text-xs text-gray-600">100%</p>
           </div>
-
           <!-- Depois -->
           <div class="flex-1 flex flex-col items-center">
             <div class="w-full bg-green-500 rounded-t-lg" style="height: 76.8px;"></div>
             <p class="text-xs font-bold text-gray-700 mt-2">Depois</p>
             <p class="text-xs text-gray-600">60%</p>
           </div>
-
         </div>
-
         <div class="flex items-center justify-center gap-2 mt-3 text-green-600 font-bold text-sm">
           <span>⬇️ -40% retrabalho</span>
         </div>
-          </div>
-         </div><!-- Gráfico de rastreabilidade -->
-         <div class="bg-purple-50 rounded-lg p-4">
-          <p class="text-sm font-semibold text-gray-700 mb-3">Rastreabilidade Operacional</p>
-          <div class="flex items-center gap-3">
-           <div class="flex-1">
-            <div class="flex justify-between text-xs text-gray-600 mb-1"><span>Antes</span> <span>30%</span>
+      </div>
+      <!-- Gráfico de Rastreabilidade -->
+      <div class="bg-purple-50 rounded-lg p-4">
+        <p class="text-sm font-semibold text-gray-700 mb-3">Rastreabilidade Operacional</p>
+        <!-- Antes -->
+        <div class="flex items-center gap-3">
+          <div class="flex-1">
+            <div class="flex justify-between text-xs text-gray-600 mb-1">
+              <span>Antes</span> <span>30%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-3">
-             <div class="bg-red-400 h-3 rounded-full" style="width: 30%"></div>
+              <div class="bg-red-400 h-3 rounded-full" style="width: 30%"></div>
             </div>
-           </div>
           </div>
-          <div class="flex items-center gap-3 mt-3">
-           <div class="flex-1">
-            <div class="flex justify-between text-xs text-gray-600 mb-1"><span>Depois</span> <span>100%</span>
+        </div>
+        <!-- Depois -->
+        <div class="flex items-center gap-3 mt-3">
+          <div class="flex-1">
+            <div class="flex justify-between text-xs text-gray-600 mb-1">
+              <span>Depois</span> <span>100%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-3">
-             <div class="bg-green-500 h-3 rounded-full" style="width: 100%"></div>
+              <div class="bg-green-500 h-3 rounded-full" style="width: 100%"></div>
             </div>
-           </div>
           </div>
-          <div class="flex items-center justify-center gap-2 mt-3 text-green-600 font-bold">
-           <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" />
-           </svg><span>+70% rastreabilidade</span>
-             </div>
+        </div>
+        <div class="flex items-center justify-center gap-2 mt-3 text-green-600 font-bold">
+          <span>+70% rastreabilidade</span>
+           </div>
          </div>
         </div>
        </div>
@@ -1194,6 +1201,7 @@
   </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9adf848630db8aef',t:'MTc2NTczNDM1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
                </html>
+
 
 
 
